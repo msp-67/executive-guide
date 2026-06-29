@@ -19,6 +19,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Executive Guide — Jan Spáčil",
   description: "Executive Guide — průvodce pro vrcholový management a majitele firem.",
+  icons: {
+    // Setting `icons` explicitly opts out of Next's file-convention
+    // auto-detection (app/icon.svg, app/apple-icon.png), so every variant
+    // is listed here by hand instead. icon.svg (self-adapting via an
+    // embedded prefers-color-scheme media query) is what modern browsers
+    // use; the PNGs are the fallback for contexts that don't evaluate the
+    // SVG's internal media query.
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicons/icon-light-16.png", media: "(prefers-color-scheme: light)", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/icon-light-32.png", media: "(prefers-color-scheme: light)", sizes: "32x32", type: "image/png" },
+      { url: "/favicons/icon-dark-16.png", media: "(prefers-color-scheme: dark)", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/icon-dark-32.png", media: "(prefers-color-scheme: dark)", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
