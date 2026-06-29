@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "individual": "Individuální",
+    "teams": "Týmy",
+    "mediation": "Mediace",
+    "families": "Rodiny",
+    "about": "O mně",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "eyebrow": "Executive Guide",
+    "title": "Po boku těch, kdo rozhodují.",
+    "subtitle": "Třicet let zkušeností v právu, mediaci a práci s lidmi na vrcholu.",
+    "tagline": "Executive Guide | Jan Spáčil"
+  },
+  "manifest": {
+    "title": "Manifest",
+    "body": "Mou prací se prolíná bytostné přesvědčení — bez práce s lidmi, s jejich nastavením, hodnotami, vztahy a představami, dlouhodobě nedrží žádné řešení, ať pracovní, strukturální či právní. Za každou situací, která si žádá řešení, stojí lidé a jejich potřeby — ať jde o jednotlivce, špičkový tým, spor mezi partnery nebo rodinu v mezigeneračním přechodu. S tímto aspektem mám bohatou zkušenost a umím s ním cíleně pracovat. A díky tomu skutečně pomáhat."
+  },
+  "quadrants": {
+    "individual": {
+      "title": "Individuální spolupráce",
+      "subtitle": "Pro vlastníky, top management a špičky v oboru",
+      "description": "Pomáhám pojmenovávat otázky, které si v klíčových situacích již možná kladete — o firmě, roli, zdraví, vztazích či o tom, co má přijít a kam se vydat — a provázím cestou k odpovědím. Situace, které důvěrně znám. Nejen z třiceti let praxe po boku druhých, ale i proto, že jsem mnohými sám prošel.",
+      "cta": "Více"
+    },
+    "teams": {
+      "title": "Vrcholové týmy",
+      "subtitle": "Pro vrcholová vedení a klíčové týmy",
+      "description": "Pomáhám vrcholovým vedením a klíčovým týmům fungovat jako skutečný tým — v obdobích, kdy na jejich souhře závisí mnohem víc než okamžité výsledky. Vím, jak fungují špičkové exekutivní týmy. A znám cesty, jak se k takové úrovni dostat.",
+      "cta": "Více"
+    },
+    "mediation": {
+      "title": "Mediace",
+      "subtitle": "Spory a konflikty tam, kde soud není cestou",
+      "description": "Pomáhám dovést k dohodě spory a konflikty, kde soud není cestou — je nákladný, není diskrétní a téměř vždy končí prohrou alespoň jedné strany. Jako mediátor vím, že o dohodě nakonec nerozhoduje právo, ale schopnost najít to, v čem se strany navzdory konfliktu shodují — a postavit na tom přijatelné řešení.",
+      "cta": "Více"
+    },
+    "families": {
+      "title": "Rodinná governance",
+      "subtitle": "Mezigenerační přechody a budoucnost rodiny",
+      "description": "Pomáhám rodinám nastavit rodinnou governance a připravit mezigenerační přechod tak, aby tmelil, nikoliv rozděloval. Cesta nevede primárně přes právní strukturu, ale přes hodnotové nastavení rodiny. Mám třicet let zkušeností s českými i zahraničními fiduciárními strukturami — základem je však vždy práce na rodině samotné.",
+      "cta": "Více"
+    }
+  },
+  "about": {
+    "title": "O mně",
+    "body": "Vycházím z třiceti let právní praxe. Vedl jsem advokátní kanceláře — působil jsem jako Partner v Ambruz & Dark/PwC a jako Managing Partner, Central Europe Leader a člen globálního vedení Deloitte Legal. Dnes vedu samostatnou advokátní praxi a vedle ní spolupracuji jako Executive Guide s omezeným okruhem klientů. Dlouhodobě se angažuji jako předseda správní rady Transparency International Česká republika a člen představenstva České advokátní komory. Jsem certifikovaný kouč (QED Group), mediátor (Conflict Management International) a zaměřuji se na krizovou intervenci (Remedium).",
+    "cta": "Více o mé cestě",
+    "photoAlt": "Jan Spáčil"
+  },
+  "contact": {
+    "title": "Pojďme si promluvit",
+    "body": "Spolupracuji s omezeným okruhem klientů, kterým mohu věnovat pozornost, jakou jejich situace zaslouží. Dlouhodobě a diskrétně. Začínáme nezávazným rozhovorem — bez očekávání, bez prezentace. Jen Vy a já, abychom zjistili, zda spolu chceme pracovat. Pracuji česky a anglicky.",
+    "cta": "Napište mi"
+  },
+  "pages": {
+    "individual": {
+      "hero": {
+        "eyebrow": "Individuální spolupráce",
+        "title": "Čím výš stojíte, tím méně máte s kým to probrat narovinu.",
+        "subtitle": "Dlouhodobá spolupráce pro lidi, jejichž rozhodnutí nesou důsledky, které často nesou sami."
+      },
+      "sections": [
+        {
+          "heading": "Pro koho",
+          "items": [
+            "Zakladatelé a majitelé firem",
+            "Top management a výkonní ředitelé",
+            "Špičky ve svém oboru, které na vrcholu zůstávají osamělé"
+          ]
+        },
+        {
+          "heading": "Kdy má smysl",
+          "items": [
+            "Stojíte před rozhodnutím, jehož dosah přesahuje běžný provoz",
+            "Cítíte první příznaky vyhoření, i když navenek vše funguje",
+            "Měníte životní kapitolu — roli, firmu, nebo to, co od života chcete",
+            "Hranice mezi byznysem a osobním životem se rozpíjí a začíná to bolet"
+          ]
+        },
+        {
+          "heading": "Jak pracuji",
+          "numbered": true,
+          "items": [
+            "Pravidelné rozhovory v dohodnutém rytmu, ne jen v okamžik krize",
+            "Dlouhodobý vztah založený na důvěře, ne jednorázová konzultace",
+            "Diskrétnost bez výjimek a bez kompromisů"
+          ]
+        },
+        {
+          "heading": "Co očekávat",
+          "numbered": true,
+          "items": [
+            "Začínáme nezávazným rozhovorem, ve kterém si ověříme, že si rozumíme.",
+            "Pokud ano, dohodneme si rytmus a formu spolupráce podle vaší situace — žádné šablony, žádné balíčky."
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Probereme to?",
+        "body": "Pokud je vám výše popsané blízké, ozvěte se. Začneme krátkým, nezávazným rozhovorem.",
+        "label": "Napsat mi"
+      }
+    },
+    "teams": {
+      "hero": {
+        "eyebrow": "Vrcholové týmy",
+        "title": "Tým na vrcholu nedrží organizační schéma, ale vztahy v něm.",
+        "subtitle": "Práce s vedením a klíčovými týmy v okamžicích, kdy na jejich souhře závisí víc než příští čtvrtletní výsledky."
+      },
+      "sections": [
+        {
+          "heading": "Pro koho",
+          "items": [
+            "Vrcholová vedení korporací",
+            "Vlastnické rodiny aktivní ve vedení firmy",
+            "Statutární orgány a představenstva"
+          ]
+        },
+        {
+          "heading": "Kdy má smysl",
+          "items": [
+            "Po fúzi nebo akvizici, kdy se spojují dva různé způsoby vedení",
+            "V krizi důvěry uvnitř vedení, která se navenek ještě neprojevila",
+            "Při výměně klíčových členů týmu a hledání nové rovnováhy"
+          ]
+        },
+        {
+          "heading": "Přístup",
+          "numbered": true,
+          "items": [
+            "Diagnostika skutečné dynamiky týmu, ne jen formálních rolí",
+            "Facilitované workshopy zaměřené na konkrétní rozhodnutí a vztahy",
+            "Individuální rozhovory s jednotlivými členy vedení"
+          ]
+        },
+        {
+          "heading": "Průběh",
+          "numbered": true,
+          "items": [
+            "Začínáme rozhovory s jednotlivými členy vedení, abych pochopil dynamiku zevnitř.",
+            "Na základě toho navrhnu strukturu společné práce — kombinaci workshopů a individuálních konzultací, která odpovídá tomu, co tým skutečně potřebuje."
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Domluvme si úvodní schůzku",
+        "body": "Popište mi stručně situaci vašeho vedení. Probereme, jestli a jak může spolupráce vypadat.",
+        "label": "Napsat mi"
+      }
+    },
+    "mediation": {
+      "hero": {
+        "eyebrow": "Mediace",
+        "title": "Dohoda, kterou obě strany unesou, drží déle než rozsudek, který jedna prohraje.",
+        "subtitle": "Nezávislé vedení obtížných jednání tam, kde soud není cestou."
+      },
+      "sections": [
+        {
+          "heading": "Pro jaké spory",
+          "items": [
+            "Korporátní spory mezi obchodními partnery",
+            "Spory mezi společníky o směřování nebo vedení firmy",
+            "Rodinné spory s majetkovým rozměrem"
+          ]
+        },
+        {
+          "heading": "Proč ne soud",
+          "items": [
+            "Soudní spor je nákladný — finančně i ve ztraceném čase",
+            "Není diskrétní — stává se součástí veřejného rejstříku",
+            "Téměř vždy poškodí vztahy, které po něm chcete dál udržet",
+            "Trvá roky, zatímco dohoda může vzniknout v týdnech"
+          ]
+        },
+        {
+          "heading": "Přístup",
+          "body": "Mediace je strukturovaný proces, ne neformální schůzka. Vedu strany k tomu, aby nejdřív pojmenovaly, v čem se navzdory konfliktu shodují, a na tomto společném základě pak hledáme řešení, které obě strany unesou."
+        },
+        {
+          "heading": "Co mediace není",
+          "tone": "callout",
+          "body": "Mediace není soud v měkčí podobě a nejsem v ní rozhodčí. Nikomu nedávám za pravdu a nevynáším rozsudek. Mou rolí je vést proces tak, aby strany došly k dohodě samy — a aby ji obě skutečně chtěly dodržet."
+        }
+      ],
+      "cta": {
+        "title": "Potřebujete vyřešit spor?",
+        "body": "Popište mi stručně, o jaký spor se jedná. Posoudíme společně, zda je mediace vhodnou cestou.",
+        "label": "Napsat mi"
+      }
+    },
+    "families": {
+      "hero": {
+        "eyebrow": "Rodinná governance",
+        "title": "Firma přežije i špatný rok. Jen těžko přežije rozhodnutí bez rodinné shody.",
+        "subtitle": "Podpora vlastnických rodin při nastavení governance a přípravě mezigeneračního přechodu."
+      },
+      "sections": [
+        {
+          "heading": "Pro koho",
+          "items": [
+            "Vlastnické rodiny stojící za firmou",
+            "Rodinné firmy před generační výměnou",
+            "Multigenerační struktury s více větvemi rodiny"
+          ]
+        },
+        {
+          "heading": "Oblasti",
+          "items": [
+            "Rodinná ústava",
+            "Rodinná rada",
+            "Family office",
+            "Mezigenerační přechod",
+            "Fiduciární struktury"
+          ]
+        },
+        {
+          "heading": "Přístup",
+          "body": "Začínám u rodiny, ne u struktury. Právní a majetkové uspořádání má smysl až tehdy, když odráží to, na čem se rodina skutečně shodne — na hodnotách, rolích a očekáváních. Bez této shody je i nejlépe napsaná rodinná ústava jen papír."
+        }
+      ],
+      "cta": {
+        "title": "Připravujete generační výměnu?",
+        "body": "Popište mi stručně situaci vaší rodiny a firmy. Probereme, kde má smysl začít.",
+        "label": "Napsat mi"
+      }
+    },
+    "about": {
+      "hero": {
+        "eyebrow": "O mně",
+        "title": "Třicet let jsem stál v právu. Dnes stojím především při lidech.",
+        "subtitle": "Cesta od advokátní praxe k práci s lidmi na vrcholu."
+      },
+      "timeline": {
+        "heading": "Profesní cesta",
+        "intro": "Vycházím z třiceti let právní praxe.",
+        "milestones": [
+          {
+            "title": "Partner",
+            "body": "Ambruz & Dark / PwC"
+          },
+          {
+            "title": "Managing Partner",
+            "body": "Central Europe Leader, člen globálního vedení Deloitte Legal"
+          },
+          {
+            "title": "Executive Guide",
+            "body": "Dnes vedu samostatnou advokátní praxi a vedle ní spolupracuji s omezeným okruhem klientů jako Executive Guide."
+          }
+        ]
+      },
+      "sections": [
+        {
+          "heading": "Institucionální angažmá",
+          "accent": "navy",
+          "cards": [
+            { "title": "Předseda správní rady Transparency International Česká republika" },
+            { "title": "Člen představenstva České advokátní komory" },
+            { "title": "Aliance pro moderní stát" },
+            { "title": "Český florbal" }
+          ]
+        },
+        {
+          "heading": "Vzdělání",
+          "accent": "blue",
+          "cards": [
+            { "title": "Masarykova univerzita" },
+            { "title": "Nottingham Trent University", "detail": "LL.M." },
+            { "title": "Vysoké učení technické v Brně" }
+          ]
+        },
+        {
+          "heading": "Certifikace",
+          "accent": "teal",
+          "cards": [
+            { "title": "Certifikovaný kouč", "detail": "QED Group" },
+            { "title": "Mediátor", "detail": "Conflict Management International (CMI)" },
+            { "title": "Krizová intervence", "detail": "Remedium" }
+          ]
+        },
+        {
+          "heading": "Hodnoty",
+          "accent": "green",
+          "cards": [
+            { "title": "Diskrétnost bez výjimek" },
+            { "title": "Dlouhodobé vztahy místo jednorázových zakázek" },
+            { "title": "Spolupráce bez vlastní agendy" },
+            { "title": "Práce na lidské vrstvě věci, ne jen na té technické" }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Sedí vám tento přístup?",
+        "body": "Pokud vás zaujalo, jak pracuji, ozvěte se. Rád se s vámi sejdu na nezávazném rozhovoru.",
+        "label": "Napsat mi"
+      },
+      "photoAlt": "Portrét Jana Spáčila"
+    },
+    "contact": {
+      "hero": {
+        "eyebrow": "Kontakt",
+        "title": "Pojďme si promluvit.",
+        "subtitle": "Spojení vzniká nejčastěji na základě doporučení. Pokud k vám výše popsané promluvilo, ozvěte se přímo."
+      },
+      "intro": "Pracuji s omezeným okruhem klientů, kterým mohu věnovat pozornost, jakou jejich situace zaslouží. Napište mi pár vět o tom, co řešíte — ozvu se vám zpět.",
+      "email": {
+        "label": "Email",
+        "value": "[doplnit e-mailovou adresu]"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "[doplnit odkaz na LinkedIn]"
+      },
+      "note": "Začínáme nezávazným rozhovorem — bez očekávání, bez prezentace. Jen vy a já, abychom zjistili, zda spolu chceme pracovat.",
+      "form": {
+        "name": "Jméno",
+        "email": "Email",
+        "message": "Stručně popište svou situaci",
+        "submit": "Odeslat"
+      },
+      "photoAlt": "Jan Spáčil"
+    }
+  }
+}

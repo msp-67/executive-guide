@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #f7f5f0;
+  --color-bg-navy: #ece8df;
+  --color-fg: #15140f;
+
+  --color-accent-navy: #253356;
+  --color-accent-blue: #3f658d;
+  --color-accent-teal: #3d777b;
+  --color-accent-green: #3e6f58;
+
+  /* RGB-triplet forms for rgba() compositing (gradients, glass) — keep in sync
+     with the hex tokens above; this is the one place that does the conversion. */
+  --color-bg-rgb: 247, 245, 240;
+  --color-accent-navy-rgb: 37, 51, 86;
+  --color-accent-blue-rgb: 63, 101, 141;
+  --color-accent-teal-rgb: 61, 119, 123;
+  --color-accent-green-rgb: 62, 111, 88;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: var(--color-bg);
+  --color-background-navy: var(--color-bg-navy);
+  --color-foreground: var(--color-fg);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent-navy: var(--color-accent-navy);
+  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-teal: var(--color-accent-teal);
+  --color-accent-green: var(--color-accent-green);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-display);
+
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-hover: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.cursor-custom-active,
+.cursor-custom-active * {
+  cursor: none;
+}
+
+/* Sitewide ambient backdrop: a barely-there multi-hue wash, off-white at its
+   core so text contrast is never affected — see src/components/ambient-background.tsx. */
+.ambient-gradient {
+  background:
+    radial-gradient(ellipse 60% 50% at 12% 8%, rgba(var(--color-accent-navy-rgb), 0.06), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 88% 12%, rgba(var(--color-accent-teal-rgb), 0.05), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(var(--color-accent-green-rgb), 0.045), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 95% 85%, rgba(var(--color-accent-blue-rgb), 0.04), transparent 60%);
+}
+
+/* Decentní frosted-glass treatment — one recipe, reused on elevated surfaces
+   (header, cards, CTA buttons, contact form panel) for consistency. Border is
+   added per-consumer via Tailwind (border vs. border-b) on top of this. */
+.glass {
+  background: rgba(var(--color-bg-rgb), 0.6);
+  box-shadow: 0 8px 30px rgba(20, 20, 15, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 767px) {
+  .glass {
+    /* backdrop-filter is the expensive part — drop it on mobile, keep the
+       translucent fill/border/shadow so it still reads as glass. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Sits on top of .glass inside an empty portrait slot (see src/components/portrait.tsx)
+   — a soft tint in the site's own accent palette, so the "photo coming soon" area
+   reads as a deliberate design surface rather than a missing image. */
+.portrait-placeholder-tint {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-accent-navy-rgb), 0.14),
+    rgba(var(--color-accent-teal-rgb), 0.12) 55%,
+    rgba(var(--color-accent-green-rgb), 0.1)
+  );
+}
+
+/* Liquid-glass header — a restrained nod to refractive glass (sheen + a hint of
+   light catching the top edge), not a literal iOS copy. Opacity is kept high
+   enough (0.7 base, 0.92 on mobile) that nav contrast holds regardless of what
+   scrolls underneath — see header.tsx. */
+.glass-header {
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 70%),
+    rgba(var(--color-bg-rgb), 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 12px 32px rgba(20, 20, 15, 0.07);
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+}
+
+@media (max-width: 767px) {
+  .glass-header {
+    /* No backdrop-filter on mobile (perf) — a higher flat opacity compensates
+       so nav text stays legible without relying on blur. */
+    background:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%),
+      rgba(var(--color-bg-rgb), 0.92);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Liquid-glass primary CTA — same restrained refraction language as the header,
+   sized down for a button. Border color/transitions stay on the Tailwind classes
+   at each call site; this only owns background/shadow/blur and their transition. */
+.glass-button {
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 65%),
+    rgba(var(--color-bg-rgb), 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 6px 20px rgba(20, 20, 15, 0.07);
+  backdrop-filter: blur(8px) saturate(1.15);
+  -webkit-backdrop-filter: blur(8px) saturate(1.15);
+  transition:
+    background 0.4s var(--ease-hover),
+    box-shadow 0.4s var(--ease-hover),
+    border-color 0.4s var(--ease-hover);
+}
+
+.glass-button:hover {
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 65%),
+    rgba(var(--color-bg-rgb), 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 10px 26px rgba(20, 20, 15, 0.1);
+}
+
+@media (max-width: 767px) {
+  .glass-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
