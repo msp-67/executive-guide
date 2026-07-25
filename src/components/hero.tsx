@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap, SplitText } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
 import { AccentMark } from "@/src/components/accent-mark";
@@ -13,6 +14,7 @@ export function Hero({
   tagline,
   accent = "navy",
   showScrollHint = false,
+  photo,
 }: {
   eyebrow: string;
   title: string;
@@ -20,6 +22,7 @@ export function Hero({
   tagline?: string;
   accent?: Accent;
   showScrollHint?: boolean;
+  photo?: { src: string; alt: string };
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -51,6 +54,15 @@ export function Hero({
           .from(".hero-eyebrow", { opacity: 0, y: 12, duration: 0.8, ease: "easeReveal" }, 0)
           .from(".hero-subtitle", { opacity: 0, y: 16, duration: 0.9, ease: "easeReveal" }, 0.6)
           .from(".hero-tagline", { opacity: 0, duration: 0.9, ease: "easeReveal" }, 0.95);
+
+        if (photo) {
+          tl.from(".hero-photo", {
+            opacity: 0,
+            y: 24,
+            duration: 1.1,
+            ease: "easeReveal",
+          }, 0.45);
+        }
 
         if (showScrollHint) {
           // Entrance fades a separate inner element — not scrollHintRef itself,
@@ -110,24 +122,49 @@ export function Hero({
   return (
     <>
       <div ref={containerRef} className="mx-auto max-w-6xl px-6 py-32 sm:py-40">
-        <p className="hero-eyebrow flex items-center gap-2.5 text-sm uppercase tracking-[0.25em] text-foreground/50">
-          <AccentMark accent={accent} />
-          {eyebrow}
-        </p>
-        <h1
-          ref={titleRef}
-          className="mt-6 font-serif text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl"
+        <div
+          className={
+            photo
+              ? "grid items-start gap-10 lg:grid-cols-[1fr_280px] lg:gap-16"
+              : undefined
+          }
         >
-          {title}
-        </h1>
-        <p className="hero-subtitle mt-8 max-w-xl text-lg text-foreground/70">
-          {subtitle}
-        </p>
-        {tagline && (
-          <p className="hero-tagline mt-16 text-sm uppercase tracking-[0.2em] text-foreground/40">
-            {tagline}
-          </p>
-        )}
+          <div>
+            <p className="hero-eyebrow flex items-center gap-2.5 text-sm uppercase tracking-[0.25em] text-foreground/50">
+              <AccentMark accent={accent} />
+              {eyebrow}
+            </p>
+            <h1
+              ref={titleRef}
+              className="mt-6 font-serif text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl"
+            >
+              {title}
+            </h1>
+            <p className="hero-subtitle mt-8 max-w-xl text-lg text-foreground/70">
+              {subtitle}
+            </p>
+            {tagline && (
+              <p className="hero-tagline mt-16 text-sm uppercase tracking-[0.2em] text-foreground/40">
+                {tagline}
+              </p>
+            )}
+          </div>
+
+          {photo && (
+            <div className="hero-photo mt-10 lg:mt-0">
+              <div className="glass relative mx-auto aspect-[4/5] w-52 overflow-hidden rounded-2xl border border-white/55 sm:w-64 lg:mx-0 lg:w-full">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 256px, 208px"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {showScrollHint && (

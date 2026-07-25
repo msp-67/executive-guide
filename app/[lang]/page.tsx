@@ -22,6 +22,7 @@ export default async function HomePage({
         subtitle={dict.hero.subtitle}
         tagline={dict.hero.tagline}
         showScrollHint
+        photo={{ src: "/jan-hero.png", alt: dict.hero.photoAlt }}
       />
       <Manifest body={dict.manifest.body} />
       <QuadrantGrid lang={lang} quadrants={dict.quadrants} />
