@@ -125,7 +125,7 @@ export function Hero({
         <div
           className={
             photo
-              ? "grid items-start gap-10 lg:grid-cols-[1fr_280px] lg:gap-16"
+              ? "grid items-start gap-10 lg:grid-cols-[1fr_360px] lg:items-stretch lg:gap-16"
               : undefined
           }
         >
@@ -151,15 +151,15 @@ export function Hero({
           </div>
 
           {photo && (
-            <div className="hero-photo mt-10 lg:mt-0">
-              <div className="glass relative mx-auto aspect-[4/5] w-52 overflow-hidden rounded-2xl border border-white/55 sm:w-64 lg:mx-0 lg:w-full">
+            <div className="hero-photo relative mt-10 lg:mt-0">
+              <div className="glass relative h-80 overflow-hidden rounded-2xl border border-white/55 sm:h-[26rem] lg:absolute lg:inset-0 lg:h-auto">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 256px, 208px"
+                  sizes="(min-width: 1024px) 360px, calc(100vw - 3rem)"
                   priority
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
