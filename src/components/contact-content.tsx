@@ -4,22 +4,17 @@ import { useRef, type FormEvent } from "react";
 import { gsap } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
 import { MagneticButton } from "@/src/components/magnetic-button";
-import { Portrait } from "@/src/components/portrait";
 
 export function ContactContent({
-  intro,
   email,
   linkedin,
   note,
   form,
-  photoAlt,
 }: {
-  intro: string;
   email: { label: string; value: string };
   linkedin: { label: string; value: string };
   note: string;
   form: { name: string; email: string; message: string; submit: string };
-  photoAlt: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -51,19 +46,9 @@ export function ContactContent({
   };
 
   return (
-    <div ref={containerRef} className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+    <div ref={containerRef} className="mx-auto max-w-5xl px-6 py-10 sm:py-16">
       <div className="grid gap-16 sm:grid-cols-2">
-        <div className="subpage-section space-y-10">
-          <div className="subpage-section-item flex items-start gap-4">
-            <Portrait
-              k="contact"
-              alt={photoAlt}
-              size="sm"
-              className="h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20"
-            />
-            <p className="max-w-md text-foreground/80">{intro}</p>
-          </div>
-
+        <div className="subpage-section space-y-8">
           <div className="subpage-section-item space-y-4">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-foreground/40">

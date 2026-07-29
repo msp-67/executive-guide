@@ -234,7 +234,7 @@
     "about": {
       "hero": {
         "eyebrow": "About",
-        "title": "For thirty years I stood in law. Today I stand mainly beside people.",
+        "title": "Thirty years in law and advisory. Today mainly with people.",
         "subtitle": "A path from legal practice to working with people at the top."
       },
       "timeline": {
@@ -261,7 +261,7 @@
           "accent": "navy",
           "cards": [
             { "title": "Chair of the Supervisory Board, Transparency International Czech Republic" },
-            { "title": "Member of the Board, Czech Bar Association" },
+            { "title": "Board of the Czech Bar Association" },
             { "title": "Alliance for the Modern State" },
             { "title": "Czech Floorball" }
           ]
@@ -283,39 +283,23 @@
             { "title": "Mediator", "detail": "Conflict Management International (CMI)" },
             { "title": "Crisis intervention", "detail": "Remedium" }
           ]
-        },
-        {
-          "heading": "Values",
-          "accent": "green",
-          "cards": [
-            { "title": "Discretion without exceptions" },
-            { "title": "Long-term relationships instead of one-off engagements" },
-            { "title": "Working without an agenda of my own" },
-            { "title": "Attention to the human layer of a situation, not only the technical one" }
-          ]
         }
       ],
-      "cta": {
-        "title": "Does this approach fit you?",
-        "body": "If how I work resonates with you, get in touch. I'm happy to meet for a non-binding conversation.",
-        "label": "Write to me"
-      },
       "photoAlt": "Portrait of Jan Spáčil"
     },
     "contact": {
       "hero": {
         "eyebrow": "Contact",
         "title": "Let's talk.",
-        "subtitle": "Connections most often begin through referral. If what you've read here speaks to you, reach out directly."
+        "subtitle": "I work with a limited circle of clients to whom I can give the attention their situation deserves. Write a few lines about what you're facing — I'll get back to you."
       },
-      "intro": "I work with a limited circle of clients to whom I can give the attention their situation deserves. Write a few lines about what you're facing — I'll get back to you.",
       "email": {
         "label": "Email",
-        "value": "[add email address]"
+        "value": "[jan.spacil@cleanmind.com]"
       },
       "linkedin": {
         "label": "LinkedIn",
-        "value": "[add LinkedIn link]"
+        "value": "Jan Spáčil"
       },
       "note": "We begin with a non-binding conversation — no expectations, no presentation. Just you and me, to find out whether we want to work together.",
       "form": {
@@ -323,8 +307,7 @@
         "email": "Email",
         "message": "Briefly describe your situation",
         "submit": "Send"
-      },
-      "photoAlt": "Jan Spáčil"
+      }
     }
   }
 }

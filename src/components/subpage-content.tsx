@@ -80,7 +80,7 @@ export function SubpageContent({
   lang: Locale;
   accent?: Accent;
   sections: Section[];
-  cta: { title: string; body: string; label: string };
+  cta?: { title: string; body: string; label: string };
   portrait?: { alt: string };
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -162,24 +162,26 @@ export function SubpageContent({
           </div>
         ))}
 
-        <div className="subpage-section">
-          <h2 className="subpage-section-item font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-            {cta.title}
-          </h2>
-          <p className="subpage-section-item mt-4 max-w-2xl text-foreground/70">
-            {cta.body}
-          </p>
-          <MagneticButton className="subpage-section-item mt-8">
-            <Link
-              href={`/${lang}/contact`}
-              data-cursor={accent ? `accent-${accent}` : "button"}
-              className="glass-button inline-flex items-center gap-3 rounded-full border border-white/55 px-8 py-4 text-sm uppercase tracking-[0.15em] hover:border-white/85"
-            >
-              {cta.label}
-              <span aria-hidden>→</span>
-            </Link>
-          </MagneticButton>
-        </div>
+        {cta && (
+          <div className="subpage-section">
+            <h2 className="subpage-section-item font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+              {cta.title}
+            </h2>
+            <p className="subpage-section-item mt-4 max-w-2xl text-foreground/70">
+              {cta.body}
+            </p>
+            <MagneticButton className="subpage-section-item mt-8">
+              <Link
+                href={`/${lang}/contact`}
+                data-cursor={accent ? `accent-${accent}` : "button"}
+                className="glass-button inline-flex items-center gap-3 rounded-full border border-white/55 px-8 py-4 text-sm uppercase tracking-[0.15em] hover:border-white/85"
+              >
+                {cta.label}
+                <span aria-hidden>→</span>
+              </Link>
+            </MagneticButton>
+          </div>
+        )}
       </div>
     </div>
   );

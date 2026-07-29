@@ -234,7 +234,7 @@
     "about": {
       "hero": {
         "eyebrow": "O mně",
-        "title": "Třicet let jsem stál v právu. Dnes stojím především při lidech.",
+        "title": "Třicet let v právu a poradenství. Dnes především s lidmi.",
         "subtitle": "Cesta od advokátní praxe k práci s lidmi na vrcholu."
       },
       "timeline": {
@@ -261,7 +261,7 @@
           "accent": "navy",
           "cards": [
             { "title": "Předseda správní rady Transparency International Česká republika" },
-            { "title": "Člen představenstva České advokátní komory" },
+            { "title": "Představenstvo České advokátní komory" },
             { "title": "Aliance pro moderní stát" },
             { "title": "Český florbal" }
           ]
@@ -283,39 +283,23 @@
             { "title": "Mediátor", "detail": "Conflict Management International (CMI)" },
             { "title": "Krizová intervence", "detail": "Remedium" }
           ]
-        },
-        {
-          "heading": "Hodnoty",
-          "accent": "green",
-          "cards": [
-            { "title": "Diskrétnost bez výjimek" },
-            { "title": "Dlouhodobé vztahy místo jednorázových zakázek" },
-            { "title": "Spolupráce bez vlastní agendy" },
-            { "title": "Práce na lidské vrstvě věci, ne jen na té technické" }
-          ]
         }
       ],
-      "cta": {
-        "title": "Sedí vám tento přístup?",
-        "body": "Pokud vás zaujalo, jak pracuji, ozvěte se. Rád se s vámi sejdu na nezávazném rozhovoru.",
-        "label": "Napsat mi"
-      },
       "photoAlt": "Portrét Jana Spáčila"
     },
     "contact": {
       "hero": {
         "eyebrow": "Kontakt",
         "title": "Pojďme si promluvit.",
-        "subtitle": "Spojení vzniká nejčastěji na základě doporučení. Pokud k vám výše popsané promluvilo, ozvěte se přímo."
+        "subtitle": "Pracuji s omezeným okruhem klientů, kterým mohu věnovat pozornost, jakou jejich situace zaslouží. Napište mi pár vět o tom, co řešíte — ozvu se vám zpět."
       },
-      "intro": "Pracuji s omezeným okruhem klientů, kterým mohu věnovat pozornost, jakou jejich situace zaslouží. Napište mi pár vět o tom, co řešíte — ozvu se vám zpět.",
       "email": {
         "label": "Email",
-        "value": "[doplnit e-mailovou adresu]"
+        "value": "jan.spacil@cleanmind.com"
       },
       "linkedin": {
         "label": "LinkedIn",
-        "value": "[doplnit odkaz na LinkedIn]"
+        "value": "Jan Spáčil"
       },
       "note": "Začínáme nezávazným rozhovorem — bez očekávání, bez prezentace. Jen vy a já, abychom zjistili, zda spolu chceme pracovat.",
       "form": {
@@ -323,8 +307,7 @@
         "email": "Email",
         "message": "Stručně popište svou situaci",
         "submit": "Odeslat"
-      },
-      "photoAlt": "Jan Spáčil"
+      }
     }
   }
 }

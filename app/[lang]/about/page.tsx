@@ -26,7 +26,7 @@ export default async function AboutPage({
         milestones={page.timeline.milestones}
         portraitAlt={page.photoAlt}
       />
-      <SubpageContent lang={lang} accent="navy" sections={page.sections} cta={page.cta} />
+      <SubpageContent lang={lang} accent="navy" sections={page.sections} />
     </>
   );
 }

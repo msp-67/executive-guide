@@ -20,12 +20,10 @@ export default async function ContactPage({
         subtitle={page.hero.subtitle}
       />
       <ContactContent
-        intro={page.intro}
         email={page.email}
         linkedin={page.linkedin}
         note={page.note}
         form={page.form}
-        photoAlt={page.photoAlt}
       />
     </>
   );
