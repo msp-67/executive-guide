@@ -23,18 +23,13 @@ export function Cursor() {
 
     document.documentElement.classList.add("cursor-custom-active");
 
-    const setX = gsap.quickTo(dot, "x", { duration: 0.5, ease: "easeHover" });
-    const setY = gsap.quickTo(dot, "y", { duration: 0.5, ease: "easeHover" });
-
     let hasMoved = false;
     const onMove = (e: MouseEvent) => {
       if (!hasMoved) {
         hasMoved = true;
-        gsap.set(dot, { x: e.clientX, y: e.clientY, opacity: 1 });
-        return;
+        gsap.set(dot, { opacity: 1 });
       }
-      setX(e.clientX);
-      setY(e.clientY);
+      gsap.set(dot, { x: e.clientX, y: e.clientY });
     };
 
     const onOver = (e: MouseEvent) => {

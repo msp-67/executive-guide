@@ -8,8 +8,8 @@ import { useGSAP } from "@gsap/react";
 // Two independent pinned stages: the logo gets its own short, dignified
 // entrance → hold → exit, then — fully out of the way — the text gets its
 // own stage with its own (unchanged) reveal tempo and reading hold.
-const LOGO_PHASE_VH = 150;
-const TEXT_PHASE_VH = 170;
+const LOGO_PHASE_VH = 75;
+const TEXT_PHASE_VH = 130;
 
 function getIsEligible() {
   return (
