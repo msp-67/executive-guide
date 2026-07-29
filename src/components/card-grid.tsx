@@ -4,7 +4,17 @@ export type CardItem = string | { title: string; detail?: string };
 
 // Shared item-card recipe — used by both PremiumSubpage (service pages) and
 // SubpageContent (about page) so the two never visually drift apart.
-export function CardGrid({ items, accent }: { items: CardItem[]; accent: Accent }) {
+// `elevated` adds a deeper resting shadow + hover lift, opt-in per call site
+// so existing pages keep their current (flatter) look until asked for.
+export function CardGrid({
+  items,
+  accent,
+  elevated = false,
+}: {
+  items: CardItem[];
+  accent: Accent;
+  elevated?: boolean;
+}) {
   const cols = items.length === 4 ? "sm:grid-cols-2" : "sm:grid-cols-3";
 
   return (
@@ -14,7 +24,11 @@ export function CardGrid({ items, accent }: { items: CardItem[]; accent: Accent 
         return (
           <div
             key={isCard ? item.title : item}
-            className={`section-item subpage-section-item glass rounded-xl border-x border-b border-t-2 border-x-white/55 border-b-white/55 ${ACCENT_CARD_EDGE[accent]} p-5 transition-colors duration-300 ease-hover hover:border-x-white/85 hover:border-b-white/85`}
+            className={`section-item subpage-section-item glass rounded-xl border-x border-b border-t-2 border-x-white/55 border-b-white/55 ${ACCENT_CARD_EDGE[accent]} p-5 duration-300 ease-hover hover:border-x-white/85 hover:border-b-white/85 ${
+              elevated
+                ? "shadow-[0_18px_45px_-20px_rgba(20,20,15,0.22)] transition-[color,border-color,transform,box-shadow] hover:-translate-y-1 hover:shadow-[0_24px_55px_-18px_rgba(20,20,15,0.28)]"
+                : "transition-colors"
+            }`}
           >
             <span
               aria-hidden
