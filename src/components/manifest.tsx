@@ -1,14 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, useSyncExternalStore } from "react";
 import { gsap, SplitText } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
 
-// Two independent pinned stages: the logo gets its own short, dignified
-// entrance → hold → exit, then — fully out of the way — the text gets its
-// own stage with its own (unchanged) reveal tempo and reading hold.
-const LOGO_PHASE_VH = 75;
 const TEXT_PHASE_VH = 130;
 
 function getIsEligible() {
@@ -46,7 +41,6 @@ function StaticManifest({ body }: { body: string }) {
           y: 24,
           duration: 1,
           ease: "easeReveal",
-          stagger: 0.2,
           scrollTrigger: { trigger: containerRef.current, start: "top 75%" },
         });
       });
@@ -58,16 +52,7 @@ function StaticManifest({ body }: { body: string }) {
 
   return (
     <div ref={containerRef} className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
-      <div className="manifest-static-item flex justify-center">
-        <Image
-          src="/lotus-mark.png"
-          alt="Executive Guide"
-          width={64}
-          height={64}
-          className="h-14 w-14 sm:h-16 sm:w-16"
-        />
-      </div>
-      <p className="manifest-static-item mt-10 text-2xl leading-relaxed text-foreground/90 sm:text-3xl">
+      <p className="manifest-static-item text-2xl leading-relaxed text-foreground/90 sm:text-3xl">
         {body}
       </p>
     </div>
@@ -76,41 +61,11 @@ function StaticManifest({ body }: { body: string }) {
 
 function PinnedManifest({ body }: { body: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const logoOuterRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useGSAP(
     () => {
-      // Phase A — entrance, a brief held beat, then exit, all driven by the
-      // logo stage's own pinned scroll range ("top top" to "bottom bottom" is
-      // exactly the window during which CSS sticky holds it in place).
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: logoOuterRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
-          },
-        })
-        .fromTo(
-          logoRef.current,
-          { opacity: 0, scale: 0.85, filter: "blur(8px)" },
-          { opacity: 1, scale: 1, filter: "blur(0px)", ease: "none", duration: 0.15 },
-          0
-        )
-        .to(
-          logoRef.current,
-          { opacity: 0, scale: 0.9, filter: "blur(6px)", ease: "none", duration: 0.15 },
-          0.82
-        );
-
-      // Phase B — text reveal, unchanged: same trigger config, same scrub,
-      // same stagger as before. Its scroll distance depends only on the
-      // section's own height, not on what sits above it, so moving the logo
-      // into its own separate stage doesn't change this tempo at all.
       const split = new SplitText(textRef.current, {
         type: "lines",
         linesClass: "manifest-line",
@@ -142,20 +97,6 @@ function PinnedManifest({ body }: { body: string }) {
 
   return (
     <div ref={containerRef}>
-      <div ref={logoOuterRef} className="relative" style={{ height: `${LOGO_PHASE_VH}vh` }}>
-        <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-visible bg-background">
-          <div ref={logoRef}>
-            <Image
-              src="/lotus-mark.png"
-              alt="Executive Guide"
-              width={64}
-              height={64}
-              className="h-14 w-14 sm:h-16 sm:w-16"
-            />
-          </div>
-        </div>
-      </div>
-
       <div className="relative" style={{ height: `${TEXT_PHASE_VH}vh` }}>
         <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-visible bg-background">
           <section ref={sectionRef} className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
