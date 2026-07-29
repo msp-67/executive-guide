@@ -98,13 +98,13 @@ function PinnedManifest({ body }: { body: string }) {
         .fromTo(
           logoRef.current,
           { opacity: 0, scale: 0.85, filter: "blur(8px)" },
-          { opacity: 1, scale: 1, filter: "blur(0px)", ease: "none", duration: 0.25 },
+          { opacity: 1, scale: 1, filter: "blur(0px)", ease: "none", duration: 0.15 },
           0
         )
         .to(
           logoRef.current,
-          { opacity: 0, scale: 0.9, filter: "blur(6px)", ease: "none", duration: 0.25 },
-          0.7
+          { opacity: 0, scale: 0.9, filter: "blur(6px)", ease: "none", duration: 0.15 },
+          0.82
         );
 
       // Phase B — text reveal, unchanged: same trigger config, same scrub,
