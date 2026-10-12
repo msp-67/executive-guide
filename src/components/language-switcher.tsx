@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { locales, type Locale } from "@/src/dictionaries/locales";
+import { routeKeyForPath, routePath } from "@/src/lib/routes";
 
 export function LanguageSwitcher({ lang }: { lang: Locale }) {
   const pathname = usePathname();
@@ -12,8 +13,9 @@ export function LanguageSwitcher({ lang }: { lang: Locale }) {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const rest = pathname.split("/").slice(2).join("/");
-  const hrefFor = (locale: Locale) => `/${locale}${rest ? `/${rest}` : ""}`;
+  // Unknown paths (the 404 page) fall back to the other language's home page.
+  const page = routeKeyForPath(lang, pathname) ?? "home";
+  const hrefFor = (locale: Locale) => routePath(locale, page);
 
   return (
     <div className="flex items-center gap-2 text-sm tracking-wide">

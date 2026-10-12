@@ -2,7 +2,7 @@
  * Central registry of Jan Spáčil's portrait photos.
  *
  * TO ADD A REAL PHOTO:
- * 1. Export it as JPG/WEBP — portrait orientation for "about"/"home", a tighter
+ * 1. Export it as JPG/WEBP — portrait orientation for "about"/"intro"/"home", a tighter
  *    square crop works for "contact". ~1600px on the long edge is plenty.
  * 2. Drop the file into `public/portraits/` (create the folder if it doesn't exist).
  * 3. Set the matching `src` below to its public path, e.g. "/portraits/about.jpg".
@@ -13,6 +13,7 @@
  */
 export const PORTRAITS = {
   about: { src: "/jan-about.png" as string | null, aspectRatio: "4 / 5" },
+  intro: { src: "/jan-hero.png" as string | null, aspectRatio: "3 / 4" },
   home: { src: "/jan-about.png" as string | null, aspectRatio: "4 / 5" },
   contact: { src: null as string | null, aspectRatio: "1 / 1" },
 } satisfies Record<string, { src: string | null; aspectRatio: string }>;

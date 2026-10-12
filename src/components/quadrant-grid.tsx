@@ -1,20 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type RefObject } from "react";
 import { gsap, ScrollTrigger } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
 import type { Dictionary } from "@/src/dictionaries/get-dictionary";
 import type { Locale } from "@/src/dictionaries/locales";
-import { QUADRANT_ACCENTS, type Accent } from "@/src/lib/quadrant-accents";
-import { AccentMark } from "@/src/components/accent-mark";
-
-const ACCENT_BG: Record<Accent, string> = {
-  navy: "bg-accent-navy",
-  blue: "bg-accent-blue",
-  teal: "bg-accent-teal",
-  green: "bg-accent-green",
-};
+import { ACCENT_BG, QUADRANT_ACCENTS, type Accent } from "@/src/lib/quadrant-accents";
+import { Eyebrow } from "@/src/components/eyebrow";
+import { ArrowLabel } from "@/src/components/arrow-label";
+import { useSectionReveal } from "@/src/lib/reveal";
 
 // Secondary CTA hover shifts to each card's own accent rather than a flat
 // foreground — quieter than the primary glass buttons, but still on-palette.
@@ -44,6 +39,9 @@ const FOCUS_FRACTION = 0.55;
 // scrub option, since we drive the cards from our own ticker rather than scrub
 // applied to an attached animation.
 const PROGRESS_SMOOTH_TIME = 1.1;
+// Viewport height the pinned stage keeps free: the fixed header above the
+// cards and a small margin below (the sticky container's pt-24 + pb-6).
+const STAGE_CLEARANCE = 120;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -91,31 +89,21 @@ function QuadrantCardList({
             key={key}
             href={`/${lang}/${slug}`}
             data-cursor={`accent-${accent}`}
-            className="quadrant-card glass group relative overflow-hidden rounded-xl border border-white/55 p-6 transition-transform duration-500 ease-hover hover:-translate-y-1 hover:scale-[1.015] sm:p-7"
+            data-reveal
+            className="quadrant-card glass group relative overflow-hidden rounded-card border border-white/55 p-6 transition-transform hover:-translate-y-1 hover:scale-[1.015] sm:p-7"
           >
             <span
               aria-hidden
-              className={`absolute inset-0 -z-10 ${ACCENT_BG[accent]} opacity-0 transition-opacity duration-500 ease-hover group-hover:opacity-15`}
+              className={`absolute inset-0 -z-10 ${ACCENT_BG[accent]} opacity-0 transition-opacity group-hover:opacity-15`}
             />
-            <p className="flex items-center gap-2.5 text-xs uppercase tracking-[0.18em] text-foreground/40">
-              <AccentMark accent={accent} />
+            <Eyebrow accent={accent} size="sm">
               {quadrant.subtitle}
-            </p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold tracking-tight sm:text-3xl">
-              {quadrant.title}
-            </h3>
+            </Eyebrow>
+            <h3 className="type-title mt-3">{quadrant.title}</h3>
             <p className="mt-3 text-sm text-foreground/70">{quadrant.description}</p>
-            <span
-              className={`mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-[0.13em] text-foreground/60 transition-colors ${ACCENT_GROUP_HOVER_TEXT[accent]}`}
-            >
+            <ArrowLabel className={`mt-5 ${ACCENT_GROUP_HOVER_TEXT[accent]}`}>
               {quadrant.cta}
-              <span
-                aria-hidden
-                className="transition-transform duration-500 ease-hover group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </span>
+            </ArrowLabel>
           </Link>
         );
       })}
@@ -125,46 +113,45 @@ function QuadrantCardList({
 
 function StaticQuadrantGrid({
   lang,
+  title,
   quadrants,
+  contentRef,
 }: {
   lang: Locale;
+  title: string;
   quadrants: Dictionary["quadrants"];
+  contentRef: RefObject<HTMLDivElement | null>;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(".quadrant-card", {
-          opacity: 0,
-          y: 48,
-          duration: 1,
-          ease: "easeReveal",
-          stagger: 0.12,
-          scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-        });
-      });
-
-      return () => mm.revert();
-    },
-    { scope: sectionRef }
-  );
+  useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="mx-auto max-w-4xl px-6 py-24 sm:py-32">
-      <QuadrantCardList lang={lang} quadrants={quadrants} />
+    <section
+      ref={sectionRef}
+      data-reveal-section
+      className="container-page py-section-half"
+    >
+      <div ref={contentRef}>
+        <h2 data-reveal className="type-heading mb-8">
+          {title}
+        </h2>
+        <QuadrantCardList lang={lang} quadrants={quadrants} />
+      </div>
     </section>
   );
 }
 
 function PinnedQuadrantGrid({
   lang,
+  title,
   quadrants,
+  contentRef,
 }: {
   lang: Locale;
+  title: string;
   quadrants: Dictionary["quadrants"];
+  contentRef: RefObject<HTMLDivElement | null>;
 }) {
   const outerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -262,9 +249,14 @@ function PinnedQuadrantGrid({
 
   return (
     <section ref={outerRef} className="relative" style={{ height: `${TOTAL_SCROLL_VH}vh` }}>
-      <div className="sticky top-0 flex h-screen w-full items-center overflow-visible bg-background">
-        <div ref={stageRef} className="mx-auto w-full max-w-4xl px-6 py-12 sm:py-16">
-          <QuadrantCardList lang={lang} quadrants={quadrants} />
+      <div className="sticky top-0 flex h-screen w-full items-center overflow-visible bg-background pb-6 pt-24">
+        <div className="container-page w-full">
+          <div ref={contentRef}>
+            <h2 className="type-heading mb-8">{title}</h2>
+            <div ref={stageRef}>
+              <QuadrantCardList lang={lang} quadrants={quadrants} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -273,16 +265,45 @@ function PinnedQuadrantGrid({
 
 export function QuadrantGrid({
   lang,
+  title,
   quadrants,
 }: {
   lang: Locale;
+  title: string;
   quadrants: Dictionary["quadrants"];
 }) {
   const canAnimate3D = useSyncExternalStore(subscribe, getIsEligible, getServerSnapshot);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [fits, setFits] = useState(false);
+  const pinned = canAnimate3D && fits;
 
-  if (!canAnimate3D) {
-    return <StaticQuadrantGrid lang={lang} quadrants={quadrants} />;
+  // The pinned stage is one screen tall, so the heading and all four cards
+  // have to fit a single viewport. Both variants render the same content at
+  // the same width, so its height is measured in whichever one is showing;
+  // when it does not fit, the cards fall back to the static grid.
+  useEffect(() => {
+    function measure() {
+      const content = contentRef.current;
+      if (content) setFits(content.offsetHeight <= window.innerHeight - STAGE_CLEARANCE);
+    }
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (contentRef.current) ro.observe(contentRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [pinned]);
+
+  if (!pinned) {
+    return (
+      <StaticQuadrantGrid lang={lang} title={title} quadrants={quadrants} contentRef={contentRef} />
+    );
   }
 
-  return <PinnedQuadrantGrid lang={lang} quadrants={quadrants} />;
+  return (
+    <PinnedQuadrantGrid lang={lang} title={title} quadrants={quadrants} contentRef={contentRef} />
+  );
 }

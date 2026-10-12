@@ -1,11 +1,4 @@
-import type { Accent } from "@/src/lib/quadrant-accents";
-
-const ACCENT_BG: Record<Accent, string> = {
-  navy: "bg-accent-navy",
-  blue: "bg-accent-blue",
-  teal: "bg-accent-teal",
-  green: "bg-accent-green",
-};
+import { ACCENT_BG, type Accent } from "@/src/lib/quadrant-accents";
 
 // A small line of palette color dropped in front of eyebrow-style labels —
 // the one deliberate touch of color allowed to repeat sitewide, kept tiny

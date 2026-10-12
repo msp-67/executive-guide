@@ -1,10 +1,14 @@
 import type { Dictionary } from "@/src/dictionaries/get-dictionary";
+import type { RouteKey } from "@/src/lib/routes";
 
+// The main menu, in order. Each key names both the page (see routes.ts) and
+// its label in the dictionary's `nav`.
 export const navItems = [
-  { slug: "individual", key: "individual" },
-  { slug: "teams", key: "teams" },
-  { slug: "mediation", key: "mediation" },
-  { slug: "families", key: "families" },
-  { slug: "about", key: "about" },
-  { slug: "contact", key: "contact" },
-] as const satisfies ReadonlyArray<{ slug: string; key: keyof Dictionary["nav"] }>;
+  "individual",
+  "teams",
+  "mediation",
+  "families",
+  "how",
+  "about",
+  "contact",
+] as const satisfies ReadonlyArray<RouteKey & keyof Dictionary["nav"]>;

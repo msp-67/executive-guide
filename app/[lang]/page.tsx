@@ -1,10 +1,20 @@
+import type { Metadata } from "next";
 import { getDictionary } from "@/src/dictionaries/get-dictionary";
 import type { Locale } from "@/src/dictionaries/locales";
+import { pageMetadata } from "@/src/lib/metadata";
+import { routePath } from "@/src/lib/routes";
 import { Hero } from "@/src/components/hero";
-import { Manifest } from "@/src/components/manifest";
+import { PortraitSection } from "@/src/components/portrait-section";
 import { QuadrantGrid } from "@/src/components/quadrant-grid";
-import { AboutTeaser } from "@/src/components/about-teaser";
 import { ContactCta } from "@/src/components/contact-cta";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  return pageMetadata((await params).lang, "home");
+}
 
 export default async function HomePage({
   params,
@@ -20,18 +30,22 @@ export default async function HomePage({
         eyebrow={dict.hero.eyebrow}
         title={dict.hero.title}
         subtitle={dict.hero.subtitle}
-        tagline={dict.hero.tagline}
+        credentials={dict.hero.credentials}
         showScrollHint
-        photo={{ src: "/jan-hero.png", alt: dict.hero.photoAlt }}
       />
-      <Manifest body={dict.manifest.body} />
-      <QuadrantGrid lang={lang} quadrants={dict.quadrants} />
-      <AboutTeaser
-        lang={lang}
+      <PortraitSection
+        portrait="intro"
+        photoAlt={dict.intro.photoAlt}
+        title={dict.intro.title}
+        body={dict.intro.body}
+      />
+      <QuadrantGrid lang={lang} title={dict.services.title} quadrants={dict.quadrants} />
+      <PortraitSection
+        portrait="home"
+        photoAlt={dict.about.photoAlt}
         title={dict.about.title}
         body={dict.about.body}
-        cta={dict.about.cta}
-        photoAlt={dict.about.photoAlt}
+        link={{ href: routePath(lang, "about"), label: dict.about.cta }}
       />
       <ContactCta
         lang={lang}

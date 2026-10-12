@@ -17,8 +17,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Executive Guide — Jan Spáčil",
-  description: "Executive Guide — průvodce pro vrcholový management a majitele firem.",
+  // Base for the relative hreflang URLs each page sets (see src/lib/metadata.ts).
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://executiveguide.cz"),
   icons: {
     // Setting `icons` explicitly opts out of Next's file-convention
     // auto-detection (app/icon.svg, app/apple-icon.png), so every variant

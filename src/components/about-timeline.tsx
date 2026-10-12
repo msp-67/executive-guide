@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import { AccentMark } from "@/src/components/accent-mark";
-import { Portrait } from "@/src/components/portrait";
+import { SectionRow } from "@/src/components/section-row";
+import { revealItems } from "@/src/lib/reveal";
 
-type Milestone = { title: string; body: string };
+type Milestone = { year: string; role: string };
 
 type Layout = {
   d: string;
@@ -49,14 +49,10 @@ function buildPath(
 
 export function AboutTimeline({
   heading,
-  intro,
   milestones,
-  portraitAlt,
 }: {
   heading: string;
-  intro: string;
   milestones: Milestone[];
-  portraitAlt: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const milestoneRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -82,7 +78,7 @@ export function AboutTimeline({
         : containerRect.height;
 
       const isMobile = width < 640;
-      const baseX = isMobile ? 9 : 22;
+      const baseX = isMobile ? 20 : 22;
       const amplitude = isMobile ? 4 : 9;
       const bumpAmount = isMobile ? 9 : 20;
 
@@ -140,14 +136,7 @@ export function AboutTimeline({
           );
 
         milestoneRefs.current.forEach((el) => {
-          if (!el) return;
-          gsap.from(el, {
-            opacity: 0,
-            y: 24,
-            duration: 0.9,
-            ease: "easeReveal",
-            scrollTrigger: { trigger: el, start: "top 82%", end: "top 55%", scrub: 0.6 },
-          });
+          if (el) revealItems(el, el);
         });
 
         ScrollTrigger.refresh();
@@ -168,18 +157,10 @@ export function AboutTimeline({
   );
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-      <div className="mb-12 flex justify-center sm:mb-16">
-        <Portrait k="about" alt={portraitAlt} size="lg" className="w-36 sm:w-44" />
-      </div>
-
-      <h2 className="flex items-center gap-2.5 text-sm uppercase tracking-[0.2em] text-foreground/40">
-        <AccentMark accent="navy" />
-        {heading}
-      </h2>
-      <p className="mt-4 max-w-xl text-foreground/80">{intro}</p>
-
-      <div ref={containerRef} className="relative mt-12">
+    <SectionRow label={heading} accent="navy">
+      {/* Bottom padding holds the line's tail and the lotus, which are drawn
+          below the last milestone, inside the section's own box. */}
+      <div ref={containerRef} className="relative pb-20">
         {layout && (
           <svg
             aria-hidden
@@ -214,15 +195,13 @@ export function AboutTimeline({
         <div className="space-y-16 pl-12 sm:pl-16">
           {milestones.map((m, i) => (
             <div
-              key={m.title}
+              key={`${m.year} ${m.role}`}
               ref={(el) => {
                 milestoneRefs.current[i] = el;
               }}
             >
-              <h3 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">
-                {m.title}
-              </h3>
-              <p className="mt-2 text-foreground/70">{m.body}</p>
+              <h3 className="type-title">{m.year}</h3>
+              <p className="mt-2 max-w-2xl text-foreground/70">{m.role}</p>
             </div>
           ))}
         </div>
@@ -232,12 +211,12 @@ export function AboutTimeline({
             ref={lotusRef}
             aria-hidden
             className="pointer-events-none absolute opacity-0"
-            style={{ left: layout.lotusX - 28, top: layout.lotusY - 28 }}
+            style={{ left: Math.max(0, layout.lotusX - 28), top: layout.lotusY - 28 }}
           >
             <Image src="/lotus-mark.png" alt="" width={56} height={56} className="h-14 w-14" />
           </div>
         )}
       </div>
-    </section>
+    </SectionRow>
   );
 }

@@ -1,54 +1,65 @@
+import type { Locale } from "@/src/dictionaries/locales";
+import { RichText, type RichTextValue } from "@/src/components/site-link";
 import { ACCENT_BG, ACCENT_CARD_EDGE, type Accent } from "@/src/lib/quadrant-accents";
 
-export type CardItem = string | { title: string; detail?: string };
+// Items longer than this no longer fit a third-width card comfortably.
+const THREE_COLUMN_MAX_LENGTH = 60;
 
-// Shared item-card recipe — used by both PremiumSubpage (service pages) and
-// SubpageContent (about page) so the two never visually drift apart.
-// `elevated` adds a deeper resting shadow + hover lift, opt-in per call site
-// so existing pages keep their current (flatter) look until asked for.
+// Where an item's opening term ends: before the dash in "Term — explanation",
+// after the full stop in "Term. Explanation."
+const LEAD_END: Record<string, (item: string) => number> = {
+  dash: (item) => item.indexOf(" — "),
+  sentence: (item) => item.indexOf(". ") + 1,
+};
+
+// Items that open with a term get it set a weight up; the text itself stays
+// exactly as written.
+function CardText({ item, lead, lang }: { item: RichTextValue; lead?: string; lang: Locale }) {
+  const end = lead && typeof item === "string" ? (LEAD_END[lead]?.(item) ?? 0) : 0;
+  if (typeof item === "string" && end > 0) {
+    return (
+      <>
+        <span className="font-medium text-foreground/90">{item.slice(0, end)}</span>
+        {item.slice(end)}
+      </>
+    );
+  }
+  return <RichText value={item} lang={lang} />;
+}
+
+// Shared item-card recipe — used by the service pages and the about page so
+// the two never visually drift apart.
 export function CardGrid({
   items,
   accent,
-  elevated = false,
+  lang,
+  lead,
 }: {
-  items: CardItem[];
+  items: RichTextValue[];
   accent: Accent;
-  elevated?: boolean;
+  lang: Locale;
+  // "dash" or "sentence" — see LEAD_END.
+  lead?: string;
 }) {
-  const cols = items.length === 4 ? "sm:grid-cols-2" : "sm:grid-cols-3";
+  const texts = items.map((item) => (typeof item === "string" ? item : item.text));
+  const longest = Math.max(...texts.map((text) => text.length));
+  const twoColumns =
+    items.length !== 3 && (items.length === 4 || longest > THREE_COLUMN_MAX_LENGTH);
 
   return (
-    <div className={`grid grid-cols-1 gap-4 ${cols}`}>
-      {items.map((item) => {
-        const isCard = typeof item !== "string";
-        return (
-          <div
-            key={isCard ? item.title : item}
-            className={`section-item subpage-section-item glass rounded-xl border-x border-b border-t-2 border-x-white/55 border-b-white/55 ${ACCENT_CARD_EDGE[accent]} p-5 duration-300 ease-hover hover:border-x-white/85 hover:border-b-white/85 ${
-              elevated
-                ? "shadow-[0_18px_45px_-20px_rgba(20,20,15,0.22)] transition-[color,border-color,transform,box-shadow] hover:-translate-y-1 hover:shadow-[0_24px_55px_-18px_rgba(20,20,15,0.28)]"
-                : "transition-colors"
-            }`}
-          >
-            <span
-              aria-hidden
-              className={`block h-1.5 w-1.5 rounded-full ${ACCENT_BG[accent]}`}
-            />
-            {isCard ? (
-              <>
-                <p className="mt-4 text-[0.95rem] font-medium text-foreground/90">
-                  {item.title}
-                </p>
-                {item.detail && (
-                  <p className="mt-1 text-sm text-foreground/55">{item.detail}</p>
-                )}
-              </>
-            ) : (
-              <p className="mt-4 text-[0.95rem] text-foreground/80">{item}</p>
-            )}
-          </div>
-        );
-      })}
+    <div className={`grid grid-cols-1 gap-4 ${twoColumns ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
+      {items.map((item, i) => (
+        <div
+          key={texts[i]}
+          data-reveal
+          className={`glass rounded-card border-x border-b border-t-2 border-x-white/55 border-b-white/55 ${ACCENT_CARD_EDGE[accent]} p-5 transition-colors hover:border-x-white/85 hover:border-b-white/85`}
+        >
+          <span aria-hidden className={`block h-1.5 w-1.5 rounded-full ${ACCENT_BG[accent]}`} />
+          <p className="mt-4 text-foreground/80">
+            <CardText item={item} lead={lead} lang={lang} />
+          </p>
+        </div>
+      ))}
     </div>
   );
 }

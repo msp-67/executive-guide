@@ -34,7 +34,7 @@ export function Portrait({
     <div
       role={src ? undefined : "img"}
       aria-label={src ? undefined : alt}
-      className={`glass relative overflow-hidden rounded-2xl border border-white/55 ${className}`}
+      className={`glass relative overflow-hidden rounded-panel border border-white/55 ${className}`}
       style={{ aspectRatio }}
     >
       {src ? (
@@ -63,7 +63,7 @@ export function Portrait({
               />
             </svg>
             <span
-              className={`font-serif tracking-[0.15em] text-foreground/25 ${MONOGRAM_SIZE[size]}`}
+              className={`font-serif tracking-action text-foreground/25 ${MONOGRAM_SIZE[size]}`}
             >
               JS
             </span>

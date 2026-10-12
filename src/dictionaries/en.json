@@ -1,313 +1,633 @@
 {
   "meta": {
-    "title": "Executive Guide — Jan Spáčil",
-    "description": "Executive Guide — a guide for top management and business owners."
+    "home": {
+      "title": "Jan Spáčil – Executive Guide | Alongside those who decide",
+      "description": "I guide founders, business owners and families through key decisions and transitions, develop leadership teams, mediate disputes and set up family governance."
+    },
+    "individual": {
+      "title": "One-to-one guidance for business owners | Jan Spáčil",
+      "description": "A long-term, confidential working relationship for founders, business owners, senior executives and top professionals who want to talk things through openly."
+    },
+    "teams": {
+      "title": "Developing leadership teams and key teams | Jan Spáčil",
+      "description": "Working with leadership and key teams after a merger, when members change, in a crisis of trust or when shaping strategy, so that they work as a real team."
+    },
+    "mediation": {
+      "title": "Mediation of business and family disputes | Jan Spáčil",
+      "description": "Mediation of disputes between shareholders and business partners, within families and with public bodies. An agreement that saves money and relationships."
+    },
+    "families": {
+      "title": "Family governance and generational transition | Jan Spáčil",
+      "description": "Family constitution and council, generational transition and protecting wealth for future generations. Shared values hold a family together, not structures."
+    },
+    "how": {
+      "title": "How I work | Jan Spáčil – lawyer, mediator, Executive Guide",
+      "description": "Relationships, mindset and legal realism. What to expect from working together, where therapy begins, how I protect discretion and how fees work."
+    },
+    "about": {
+      "title": "Jan Spáčil – lawyer, mediator, Executive Guide",
+      "description": "Thirty years in law, including leading Deloitte Legal. Chair of the Board of Transparency International Czech Republic. Now focused on people and relationships."
+    },
+    "contact": {
+      "title": "Contact | Jan Spáčil – Executive Guide",
+      "description": "Send me a few lines about your situation, or just let me know you would like to meet: at my office in Prague, at yours or online, in English or Czech."
+    },
+    "privacy": {
+      "title": "Privacy policy | Jan Spáčil – Executive Guide",
+      "description": "How CleanMind s.r.o., the operator of executiveguide.cz, processes personal data from the contact form and email, and what rights you have under the GDPR."
+    }
+  },
+  "site": {
+    "name": "Jan Spáčil · Executive Guide"
   },
   "nav": {
-    "individual": "One-on-One",
+    "individual": "One-to-one",
     "teams": "Teams",
     "mediation": "Mediation",
     "families": "Families",
+    "how": "How I work",
     "about": "About",
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Executive Guide",
+    "eyebrow": "Jan Spáčil · Executive Guide",
     "title": "Alongside those who decide.",
-    "subtitle": "Thirty years of experience in law, mediation and working with people at the top.",
-    "tagline": "Executive Guide | Jan Spáčil",
-    "photoAlt": "Jan Spáčil"
+    "subtitle": "I guide people through key decisions and transitions, develop teams, steer disputes towards agreement and set up family governance. Thirty years alongside founders, business owners, senior executives, leaders in their field and families.",
+    "credentials": "Lawyer, mediator and Executive Guide · formerly Managing Partner and Central Europe Leader, Deloitte Legal · Chair of the Board, Transparency International Czech Republic"
   },
-  "manifest": {
-    "title": "Manifesto",
-    "body": "My work is guided by a fundamental conviction — without working with people, with their mindsets, values, relationships and aspirations, no solution — operational, structural or legal — holds in the long run. Behind every situation that calls for resolution stand people and their needs — whether it is an individual, an executive team, a dispute between partners, or a family in generational transition. I have deep experience with this dimension and know how to work with it deliberately. And through that, to truly help."
+  "intro": {
+    "title": "What my work rests on",
+    "body": "One deep conviction runs through all my work: no solution — organisational, structural or legal — holds in the long run without working with the people involved, with their mindset, values, relationships and expectations. Behind every situation that calls for a solution there are people and their needs, whether it is an individual, a leadership team, a dispute between partners or a family in generational transition. At the same time, I am still a practising lawyer, and what clients value is exactly this combination: work on relationships and mindset, together with legal realism grounded in long experience.",
+    "photoAlt": "Portrait of Jan Spáčil"
+  },
+  "services": {
+    "title": "What I help with"
   },
   "quadrants": {
     "individual": {
-      "title": "One-on-One Partnership",
-      "subtitle": "For owners, top management and leading professionals",
-      "description": "I help articulate the questions you may already be asking yourself in pivotal moments — about your company, role, health, relationships, or about what should come next and where to head — and I guide you toward the answers. These are situations I know intimately. Not only from thirty years of practice alongside others, but also because I have lived through many of them myself.",
+      "title": "One-to-one",
+      "subtitle": "For founders, business owners, senior executives and leaders in their field",
+      "description": "I guide you through key decisions and transitions. I help you name the questions you may already be asking yourself — about your company, your role, your health, your relationships, or where to go from here and what should come next — and reach answers you can stand behind. I know these situations well, both from working alongside others and from having been through many of them myself.",
       "cta": "More"
     },
     "teams": {
-      "title": "Executive Teams",
-      "subtitle": "For top leadership and key teams",
-      "description": "I help executive leadership and key teams function as a true team — particularly in periods when much more depends on their alignment than just immediate results. I know how top executive teams operate. And I know the paths to reach that level.",
+      "title": "Leadership teams",
+      "subtitle": "For senior leadership and key teams",
+      "description": "I help develop senior leadership and key teams so that they work as a real team, especially at times when their teamwork will decide more than immediate results. I know how top executive teams function: I have been part of many of them and have led several. So I also know how a team can reach that level.",
       "cta": "More"
     },
     "mediation": {
       "title": "Mediation",
-      "subtitle": "Disputes and conflicts where court is not the way",
-      "description": "I help bring resolution to disputes and conflicts where court is not the way — it is costly, lacks discretion, and almost always ends with at least one party losing. As a mediator, I know that what ultimately decides an agreement is not law, but the ability to find what the parties share despite the conflict — and to build an acceptable solution on that foundation.",
+      "subtitle": "For co-owners, business partners and families in dispute",
+      "description": "I steer disputes towards agreement where going to court is not the right path: it is costly, it is not discreet, it usually ends with one side losing, and the relationship between the parties rarely survives it. As a mediator, I know that agreement does not ultimately depend on the law, but on the ability to find, together with the parties, what they still agree on despite the dispute. That is the ground on which we build a solution both sides can accept.",
       "cta": "More"
     },
     "families": {
-      "title": "Family Governance",
-      "subtitle": "Generational transitions and the future of the family",
-      "description": "I help families establish family governance and prepare generational transitions in a way that strengthens rather than divides them. The path does not lead primarily through legal structures, but through the family's underlying values. I have thirty years of experience with Czech and international fiduciary structures — but the foundation is always work with the family itself.",
+      "title": "Family governance",
+      "subtitle": "For families and family businesses",
+      "description": "I work with families on the rules by which they shape their cooperation and make decisions about the business and their assets. I prepare the transition between generations so that it holds the family together rather than pulling it apart. The way there runs not primarily through legal structures, but through the family's values. I know trusts, foundations and holding structures, Czech and foreign, from many years of practice — but the starting point is always work with the family itself.",
       "cta": "More"
     }
   },
   "about": {
-    "title": "About",
-    "body": "I draw on thirty years of legal practice. I have led law firms — serving as Partner at Ambruz & Dark/PwC and as Managing Partner, Central Europe Leader and member of the global leadership of Deloitte Legal. Today I run my own legal practice and, alongside it, work as Executive Guide with a limited circle of clients. I have long been engaged in institutional life — as Chair of the Supervisory Board of Transparency International Czech Republic and a member of the Board of the Czech Bar Association. I am a certified coach (QED Group), mediator (Conflict Management International) and crisis intervention specialist (Remedium).",
-    "cta": "More about my path",
-    "photoAlt": "Jan Spáčil"
+    "title": "About me",
+    "body": "I draw on thirty years of legal practice at PwC, Ambruz & Dark and Deloitte Legal. I co-founded the law firm Ambruz & Dark, and at Deloitte Legal I served as Managing Partner for the Czech Republic, then as Central Europe Leader and a member of the global leadership team. Today, alongside my role as Executive Guide and my own law practice, I serve on the Board of Directors of the Czech Bar Association, where I also lead the Mediation Section, and I have long chaired the Board of Transparency International Czech Republic. I am a certified coach for individuals and teams (QED GROUP) and a mediator (Conflict Management International), and I have trained in crisis intervention (Remedium) and completed the Train to Introduce Mindfulness Course (Oxford Mindfulness Foundation).",
+    "cta": "More about me",
+    "photoAlt": "Portrait of Jan Spáčil"
   },
   "contact": {
     "title": "Let's talk",
-    "body": "I work with a limited circle of clients to whom I can give the attention their situation deserves. Long-term and discreetly. We begin with a non-binding conversation — no expectations, no presentation. Just you and me, to find out whether we want to work together. I work in Czech and English.",
-    "cta": "Write to me"
+    "body": "I work with a limited number of clients, so that I can give each of them the attention their situation deserves, over the long term and in confidence. We start with a no-obligation conversation — no expectations, no pitch. Just you and me, to find out whether we want to work together. I work in Czech and English.",
+    "cta": "Get in touch"
+  },
+  "footer": {
+    "operator": "Operator: CleanMind s.r.o., Company ID (IČO) 21205515, registered office V Boroví 2305, 252 28 Černošice, Czech Republic, entered in the Commercial Register maintained by the Municipal Court in Prague, Section C, Insert 398224",
+    "legal": {
+      "text": "I provide legal services as a lawyer through my own law practice: legaladvisors.cz",
+      "links": [
+        {
+          "match": "legaladvisors.cz",
+          "to": "https://legaladvisors.cz"
+        }
+      ]
+    },
+    "privacy": "Privacy policy",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026"
   },
   "pages": {
     "individual": {
       "hero": {
-        "eyebrow": "One-on-One Partnership",
-        "title": "The higher you stand, the fewer people you can speak to plainly.",
-        "subtitle": "A long-term partnership for people whose decisions carry consequences they often carry alone."
+        "eyebrow": "One-to-one",
+        "title": "The higher you rise, the fewer people you can talk to openly about everything — your concerns, your dilemmas, your plans.",
+        "subtitle": "A long-term working relationship for people whose decisions tend to have far-reaching consequences and who often bear those consequences alone."
       },
       "sections": [
         {
-          "heading": "Who it's for",
+          "nav": "What it is",
+          "heading": "Someone to talk it all through with before you decide",
+          "titled": true,
+          "paragraphs": [
+            "I work with people who are dealing with or deciding something fundamental, going through something, or wanting to move forward. I help them name what is really at stake, what matters, and which way forward they will be able to stand behind. I am not a theorist — over the years I have been in similar situations many times, both alongside clients and in my own life."
+          ]
+        },
+        {
+          "nav": "When it makes sense",
+          "heading": "When it makes sense",
+          "items": [
+            "You are facing a major decision with consequences for your career, your family and beyond",
+            "You want to move forward, professionally or personally, and need help both with defining the next goal and with reaching it",
+            "You are considering a change but do not know how to get there, or you fear it as a step into the unknown",
+            "You are starting a new chapter — a change of role, of company or of what you want from life",
+            "The line between work and private life is blurring, and it is starting to hurt",
+            "You are looking for new motivation in your career",
+            "Your career now takes more than it gives, or is not heading where you want it to, and you do not know where to go next",
+            "You notice signs of burnout, dissatisfaction or restlessness, even though from the outside everything seems to work and you tell yourself you ought to be happy"
+          ]
+        },
+        {
+          "nav": "Who I work with",
+          "heading": "Who I most often work with",
           "items": [
             "Founders and business owners",
-            "Top management and executives",
-            "Leading professionals who find the top a lonely place"
-          ]
+            "Senior executives",
+            "Partners and management of law firms and other professional services firms",
+            "Top professionals, athletes and artists"
+          ],
+          "after": {
+            "text": "What matters, though, is not your title or field, but what you are dealing with and whether we are a good fit. If you do not see yourself in any of these groups but still feel that working with me would make sense, get in touch.",
+            "links": [
+              {
+                "match": "get in touch",
+                "to": "contact"
+              }
+            ]
+          }
         },
         {
-          "heading": "When it matters",
-          "items": [
-            "You're facing a decision whose reach goes beyond day-to-day operations",
-            "You sense the first signs of burnout, even if everything looks fine from outside",
-            "You're changing a life chapter — a role, a company, or what you want from life",
-            "The line between business and personal life is blurring, and it's starting to hurt"
-          ]
-        },
-        {
+          "nav": "How I work",
           "heading": "How I work",
-          "numbered": true,
-          "items": [
-            "Regular conversations on an agreed rhythm, not only in moments of crisis",
+          "steps": [
+            "Regular conversations at an agreed frequency, not only in moments of crisis",
             "A long-term relationship built on trust, not a one-off consultation",
-            "Discretion without exceptions and without compromise"
+            "Discretion as a given",
+            "If your situation calls for a therapist or a doctor, I will tell you openly and help you find the right one"
           ]
         },
         {
+          "nav": "What to expect",
           "heading": "What to expect",
-          "numbered": true,
-          "items": [
-            "We start with a non-binding conversation to confirm we understand each other.",
-            "If we do, we agree on a rhythm and form of cooperation that fits your situation — no templates, no packages."
+          "steps": [
+            "We start with a no-obligation conversation to see whether we are a good fit.",
+            "If so, we agree on a rhythm and format of working together that suits your situation — no templates, no packages.",
+            "We usually meet once every three weeks at my office in Malá Strana, Prague."
           ]
         }
       ],
       "cta": {
-        "title": "Shall we talk?",
-        "body": "If this sounds like your situation, get in touch. We'll start with a short, non-binding conversation.",
-        "label": "Write to me"
+        "title": "Shall we talk it through?",
+        "body": "If any of this sounds familiar, get in touch. We will start with a short, no-obligation conversation.",
+        "label": "Get in touch"
       }
     },
     "teams": {
       "hero": {
-        "eyebrow": "Executive Teams",
-        "title": "What holds a leadership team together isn't the org chart — it's the relationships inside it.",
-        "subtitle": "Working with leadership and key teams in moments when their alignment matters more than next quarter's results."
+        "eyebrow": "Leadership teams",
+        "title": "What holds a top team together is not the organisation chart but the relationships between its members.",
+        "subtitle": "Working with leadership and key teams at moments when their teamwork will decide more than next quarter's results."
       },
       "sections": [
         {
-          "heading": "Who it's for",
+          "nav": "Who it is for",
+          "heading": "Who it is for",
           "items": [
-            "Corporate top leadership",
-            "Owner families active in company leadership",
-            "Statutory bodies and boards"
+            "Leadership teams of companies and corporate groups",
+            "Boards of directors and supervisory boards",
+            {
+              "text": "Business-owning families active in running the business — and if it is more about family relationships than leadership, see Family governance →",
+              "links": [
+                {
+                  "match": "Family governance →",
+                  "to": "families"
+                }
+              ]
+            },
+            "Managing partners and partnership boards of law firms and other professional services firms",
+            "Top teams in sport, the arts and elsewhere"
           ]
         },
         {
-          "heading": "When it matters",
+          "nav": "When it makes sense",
+          "heading": "When it makes sense",
           "items": [
-            "After a merger or acquisition, when two different styles of leadership combine",
-            "In a crisis of trust within leadership that hasn't yet surfaced publicly",
-            "When key team members change and a new balance needs to be found"
+            "After a merger or acquisition, when two different ways of leading and working come together",
+            "In a crisis of trust within the team that may not yet be visible from the outside",
+            "When key team members or leaders change and a new balance has to be found",
+            "When shaping strategy and new directions",
+            "When a team has long been falling short of its potential",
+            "When the leadership agrees, but execution stalls and decisions are not followed through",
+            "In crisis scenarios involving legal or reputational problems affecting the team or its members"
           ]
         },
         {
+          "nav": "Approach",
           "heading": "Approach",
-          "numbered": true,
-          "items": [
-            "Diagnosing the team's real dynamics, not just its formal roles",
-            "Facilitated workshops focused on specific decisions and relationships",
-            "Individual conversations with each member of leadership"
+          "steps": [
+            "Checking the brief and, where needed, adjusting it so that it makes the most sense for the team and the organisation",
+            "Diagnosing the team's real dynamics through joint sessions",
+            "Team sessions focused on specific decisions and relationships",
+            "Individual conversations with team members where useful, with what emerges brought back into the subsequent joint sessions",
+            "Recommendations and implementation of next steps"
           ]
         },
         {
-          "heading": "Process",
-          "numbered": true,
-          "items": [
-            "We start with individual conversations with each member of leadership, so I can understand the dynamic from the inside.",
-            "Based on that, I propose a structure for our work together — a combination of workshops and individual sessions that matches what the team actually needs."
+          "nav": "How it works",
+          "heading": "How it works",
+          "steps": [
+            "We start with conversations with the members of the leadership who commission the work, to understand the real dynamics from the inside and to verify the brief.",
+            "On that basis, we agree on how we will work — a combination of joint sessions and, where useful, individual conversations that matches what the team really needs.",
+            "Together with the leadership, we keep reviewing what is changing in how the team functions and works together. The engagement usually lasts three to nine months, with meetings roughly every one or two months, although the timeframe and frequency can be tailored."
+          ]
+        },
+        {
+          "paragraphs": [
+            "I draw on the years when I was part of large top teams myself or led them, on my training in team coaching and facilitation (QED GROUP), and on my current practice, both as a guide and as an actual team leader."
           ]
         }
       ],
       "cta": {
-        "title": "Let's set up an introductory meeting",
-        "body": "Tell me briefly about your leadership situation. We'll discuss whether and how a partnership could work.",
-        "label": "Write to me"
+        "title": "Let's arrange a first meeting",
+        "body": "Briefly describe your team's situation and what you need. We will discuss whether working together could make sense and what it might look like.",
+        "label": "Get in touch"
       }
     },
     "mediation": {
       "hero": {
         "eyebrow": "Mediation",
-        "title": "An agreement both sides can live with outlasts a verdict one side loses.",
-        "subtitle": "Independent guidance through difficult negotiations where court is not the way."
+        "title": "An agreement both sides can live with preserves and strengthens relationships and saves money — unlike a court case, where at least one side loses.",
+        "subtitle": "Independent guidance through difficult negotiations in cases where going to court is not the answer."
       },
       "sections": [
         {
-          "heading": "Disputes I work with",
+          "nav": "Types of dispute",
+          "heading": "Types of dispute",
           "items": [
-            "Corporate disputes between business partners",
-            "Disputes between shareholders over a company's direction or leadership",
-            "Family disputes with a financial dimension"
+            "Disputes between shareholders and co-owners",
+            "Commercial disputes between business partners",
+            "Disputes in family businesses and between heirs",
+            "Family disputes involving assets",
+            "Disputes with a public-law element, where one of the parties is a public body"
           ]
         },
         {
-          "heading": "Why not court",
+          "nav": "When mediation is better than court",
+          "heading": "When mediation is better than court",
           "items": [
-            "Litigation is costly — in money and in lost time",
-            "It isn't discreet — it becomes part of the public record",
-            "It almost always damages relationships you'll need to maintain afterward",
-            "It takes years, while an agreement can be reached in weeks"
+            "Litigation is costly and draining — financially and mentally",
+            "Court proceedings are not discreet — hearings are usually public",
+            "Litigation almost always damages relationships you want to keep afterwards",
+            "Court proceedings usually take years, while an agreement can be reached within weeks",
+            "Mediation makes sense even when the case is already in court"
           ]
         },
         {
+          "nav": "Approach",
           "heading": "Approach",
-          "body": "Mediation is a structured process, not an informal meeting. I guide the parties to first name what they agree on despite the conflict, and we build a solution both sides can live with on that shared ground."
+          "paragraphs": [
+            "Mediation is a structured process, not an informal meeting. I first help each party put into words how they see the dispute. Together we look for what they agree on despite the conflict and what their real, shared interest is, and on that basis we work towards a solution both sides can live with."
+          ]
         },
         {
+          "nav": "How mediation works",
+          "heading": "How mediation works",
+          "steps": [
+            "Initial conversations with the parties, separately and together, to clarify what the dispute is about and whether mediation is suitable.",
+            "Joint sessions in which we look for what the parties agree on and build a solution on it.",
+            "A written agreement. If the parties wish, it can be made enforceable."
+          ]
+        },
+        {
+          "nav": "Impartiality and confidentiality",
+          "heading": "Impartiality and confidentiality",
+          "paragraphs": [
+            "In any dispute I mediate, I never act as a lawyer for either party, whether before or after the mediation.",
+            "If you have a lawyer, they remain your lawyer. They can accompany you to the mediation and go through the agreement with you before you sign.",
+            "As a lawyer, I am bound by professional confidentiality in my role as mediator too. On top of that, we set out the confidentiality of everything said in the mediation in a written mediation agreement, so that it binds both parties as well."
+          ]
+        },
+        {
+          "nav": "What mediation is not",
           "heading": "What mediation is not",
+          "paragraphs": [
+            "Mediation is not a softer form of litigation, and I am not an arbitrator. I do not decide who is right and I do not hand down a judgment. My role is to run the process so that the parties reach agreement themselves — and both genuinely want to keep it. I am responsible for the process leading to the agreement; the parties are responsible for its content."
+          ],
           "tone": "callout",
-          "body": "Mediation is not a softer version of court, and I am not an arbitrator. I don't take anyone's side and I don't issue a verdict. My role is to run the process so the parties reach an agreement themselves — one both genuinely intend to keep."
+          "note": "I am a lawyer and mediator, and Chair of the Mediation Section of the Czech Bar Association."
         }
       ],
       "cta": {
         "title": "Need to resolve a dispute?",
-        "body": "Tell me briefly what the dispute involves. We'll assess together whether mediation is the right path.",
-        "label": "Write to me"
+        "body": "Briefly describe the dispute. Together we will assess whether mediation is the right way forward.",
+        "label": "Get in touch"
       }
     },
     "families": {
       "hero": {
-        "eyebrow": "Family Governance",
-        "title": "A company survives a bad year. It rarely survives a decision made without family agreement.",
-        "subtitle": "Supporting owner families in setting up governance and preparing for generational transition."
+        "eyebrow": "Family governance",
+        "title": "Legal rules and tax structures do not hold a family, its assets or its businesses together. Shared values, a common goal and open communication do.",
+        "subtitle": "I help families define their shared values and how they work together, and then the rules by which they decide together about the family's future, the business and their assets — their family governance. I prepare transitions between generations so that they hold the family together rather than pulling it apart."
       },
       "sections": [
         {
-          "heading": "Who it's for",
+          "nav": "Who it is for",
+          "heading": "Who it is for",
           "items": [
-            "Owner families behind a business",
-            "Family businesses approaching a generational transition",
-            "Multi-generational structures with several family branches"
+            "Founders who are starting to think about who will one day take over the business, and how",
+            "Founders who want to protect future generations from pitfalls and risks from outside — and from themselves",
+            "Business-owning families looking for more than legal and tax structures for the future of the family and its assets",
+            "Family businesses weighing different options and ways of continuing or handing over ownership and management",
+            "Established multi-generational structures with several family branches, looking for a way to keep working together in the long term for the benefit of the whole family"
           ]
         },
         {
-          "heading": "Areas",
+          "nav": "When it makes sense",
+          "heading": "When it makes sense",
           "items": [
-            "Family constitution",
-            "Family council",
-            "Family office",
-            "Generational transition",
-            "Fiduciary structures"
+            "Handing over the business is not yet discussed openly in the family, even though everyone knows it will come",
+            "The next generation is joining the business, and roles and rules are not clear",
+            "Family members have different ideas about what to do with the business and the assets",
+            "A structure already exists (a trust, foundation or holding company), but the family does not agree on its purpose",
+            {
+              "text": "A dispute is already under way in the family — in which case mediation may be the first step →",
+              "links": [
+                {
+                  "match": "mediation may be the first step →",
+                  "to": "mediation"
+                }
+              ]
+            }
           ]
         },
         {
+          "nav": "What it covers",
+          "heading": "What it covers",
+          "items": [
+            "Family constitution — the family's agreement on values, roles and rules in relation to the family, the business and the assets.",
+            "Family council and other bodies where needed — a place and a rhythm for the family to make decisions together and resolve disagreements before they turn into disputes.",
+            "Family office — managing the family's assets under one roof; I help decide whether the family needs one and in what form.",
+            "Generational transition — planning and aligning expectations about handing over ownership and leadership, their realistic timing and impact, so that both founders and successors are prepared and the rest of the family accepts it.",
+            "Planning risk diversification and asset allocation — assets held outside the family for designated beneficiaries, assets structured through succession-law instruments, allocation across different countries and so on.",
+            "Fiduciary structures — trusts and foundations, Czech and foreign, including Liechtenstein structures."
+          ],
+          "lead": "dash"
+        },
+        {
+          "nav": "Approach",
           "heading": "Approach",
-          "body": "I start with the family, not the structure. Legal and ownership arrangements only make sense once they reflect what the family actually agrees on — values, roles, and expectations. Without that agreement, even the best-drafted family constitution is just paper."
+          "paragraphs": [
+            "I start with the family, not the structure. Legal and financial arrangements only make sense once they reflect what the family genuinely agrees on — values, roles and expectations. Without that agreement, even the best-written family constitution is just paper.",
+            "At the same time, I know the technical side from practice: trusts, foundations including those in Liechtenstein, tax implications and holding structures. So I know what is possible in practice — but the basis is always work with the family and its shared values and expectations.",
+            "I work with your lawyers and tax advisers rather than replacing them. If a legal solution is needed, I can prepare it myself or together with your advisers, or they can prepare it themselves."
+          ],
+          "note": "I am Vice-Chair of the Trust and Endowment Fund Administration Subsection of the Czech Bar Association."
+        },
+        {
+          "nav": "How it works",
+          "heading": "How it works",
+          "steps": [
+            "Verifying the brief and refining or adjusting it with the person who commissions the work, typically the founder or head of the family",
+            "Discussing the client's ideas about the desired solutions and the ideal final arrangement",
+            "Conversations with the relevant family members individually, so that each has room to say how they see the situation and to name any critical points and challenges.",
+            "A joint meeting where we name what the family agrees on, where its expectations differ and what needs work, and set out the framework for further cooperation and the steps towards the final arrangement.",
+            "Joint meetings to define shared values and related questions, leading to the family constitution.",
+            "Only then further documents and structures: the family council, legal arrangements and so on.",
+            "Any further legal and related steps towards the final arrangement — ongoing support (where legal services are needed, I provide them separately as a lawyer).",
+            "Further support in checking that the arrangement works, and updating documents as circumstances develop."
+          ]
         }
       ],
       "cta": {
-        "title": "Preparing a generational transition?",
-        "body": "Tell me briefly about your family and business situation. We'll discuss where it makes sense to start.",
-        "label": "Write to me"
+        "title": "Are you looking for a sound way to organise your family, family business and assets? Are you preparing to pass ownership or leadership to the next generation and looking to secure and protect those who come after you?",
+        "body": "Tell me briefly about your family and your business. We will talk about where it makes sense to begin.",
+        "label": "Get in touch"
+      }
+    },
+    "how": {
+      "hero": {
+        "eyebrow": "How I work",
+        "title": "Relationships, mindset and legal realism.",
+        "subtitle": "This is the combination clients value most in my work. Below is what it means in practice."
+      },
+      "sections": [
+        {
+          "nav": "Relationships",
+          "heading": "Relationships",
+          "paragraphs": [
+            "In most situations people bring to me, what ultimately decides the outcome is not the contract or the strategy, but how the people involved talk to each other. That is what I work with — with one person, a whole leadership team, a family or the parties to a dispute. Besides decades of varied experience, I am trained in individual and team coaching (QED GROUP) and in mediation (Conflict Management International)."
+          ]
+        },
+        {
+          "nav": "Mindset",
+          "heading": "Mindset",
+          "paragraphs": [
+            "Pressure, fatigue, doubt, a lost sense of meaning or the first signs of burnout are rarely discussed at the top of companies, even though they affect how a business works far more than we care to admit. I know how to work with this side of things too, again drawing both on my experience of leading teams and on what I have been through myself. I am trained in crisis intervention (Remedium) and in mindfulness (Oxford Mindfulness Foundation)."
+          ],
+          "box": {
+            "text": "I am not a therapist or a doctor. If your situation needs professional care, I will tell you straight away and openly, and help you find the right person. If you are in acute distress, call the Czech crisis line Linka první psychické pomoci on 116 123 (free, 24/7); in a life-threatening emergency, call 155 or 112.",
+            "links": [
+              {
+                "match": "116 123",
+                "to": "tel:116123"
+              },
+              {
+                "match": "155",
+                "to": "tel:155"
+              },
+              {
+                "match": "112",
+                "to": "tel:112"
+              }
+            ]
+          }
+        },
+        {
+          "nav": "Legal realism",
+          "heading": "Legal realism",
+          "paragraphs": [
+            "I have been a member of the Czech Bar since 2002, and for many years I led large law firms. I know what is possible legally and in terms of tax, and what is not, and I will not let you base a decision on something that would not hold up. I provide legal services through my law practice; one-to-one guidance, work with teams and families, and mediation are not legal services. When a legal solution is needed, I will tell you, and we will agree on who is best placed to prepare it."
+          ]
+        },
+        {
+          "nav": "Principles",
+          "heading": "Principles",
+          "items": [
+            "Discretion. Uncompromising confidentiality — I will explain in person the options for securing it.",
+            "Impartiality. I have no personal interest in what you decide.",
+            "A limited number of clients. I take on only as many engagements as I can give my full attention to.",
+            "Where and how. In Czech and English. Ideally at my office in Malá Strana, Prague, otherwise at yours or online.",
+            "No price list. We agree on scope and fees after the first conversation, based on what your situation needs."
+          ],
+          "lead": "sentence"
+        },
+        {
+          "nav": "Why Executive Guide",
+          "heading": "Why Executive Guide",
+          "paragraphs": [
+            "I chose the word 'guide' deliberately. I do not decide for you, and I do not hand out ready-made answers. I help you see and fully grasp the whole situation, from every angle and with all the options for resolving it. Then I walk with you all the way to a decision that you can stand behind and that will work in the long run."
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Let's talk",
+        "body": "We start with a no-obligation conversation to see whether we are a good fit.",
+        "label": "Get in touch"
       }
     },
     "about": {
       "hero": {
-        "eyebrow": "About",
-        "title": "Thirty years in law and advisory. Today mainly with people.",
-        "subtitle": "A path from legal practice to working with people at the top."
+        "eyebrow": "About me",
+        "title": "Thirty years in law and leadership. Today, my work is above all about people and relationships.",
+        "subtitle": "A varied career that makes sense as a whole. Lawyer, mediator and guide for those who make the decisions."
+      },
+      "photoAlt": "Portrait of Jan Spáčil",
+      "why": {
+        "heading": "How it all fits together",
+        "paragraphs": [
+          "Anyone looking at everything I do today might be tempted, a little ironically, to call me a jack of all trades. I guide people through important decisions and towards their goals, work with teams, mediate disputes, and help families function across generations and pass on family wealth. It took me a while to convince myself that it all makes sense as a whole and that I do not want to give up any part of it.",
+          "What connects it all is that each time I am helping people who are facing something fundamental — whether it concerns their company, their family, a team, a dispute or their own mental wellbeing — and who need someone to talk it through with and to stay by their side on the way to a decision. I have met a great many such people over the years. And more than once, I have been in their position myself, with the same questions.",
+          "You never deal with anything in isolation from the people around you — colleagues, business partners, friends, family or the other side. And you will always perceive all of reality through a single receiver: your own head and your own mind."
+        ]
       },
       "timeline": {
-        "heading": "Professional path",
-        "intro": "I draw on thirty years of legal practice.",
+        "heading": "Career",
         "milestones": [
           {
-            "title": "Partner",
-            "body": "Ambruz & Dark / PwC"
+            "year": "1997–2001",
+            "role": "Coopers & Lybrand, PricewaterhouseCoopers — legal department, early career in an international environment"
           },
           {
-            "title": "Managing Partner",
-            "body": "Central Europe Leader, member of the global leadership of Deloitte Legal"
+            "year": "2001–2011",
+            "role": "Ambruz & Dark — co-founder and partner; commercial and corporate law, acquisitions, restructuring, corporate governance; a law firm associated with PwC and part of its network"
           },
           {
-            "title": "Executive Guide",
-            "body": "Today I run my own legal practice and, alongside it, work with a limited circle of clients as Executive Guide."
+            "year": "since 2002",
+            "role": "lawyer admitted to the Czech Bar Association"
+          },
+          {
+            "year": "2011–2023",
+            "role": "Deloitte Legal Czech Republic — Managing Partner; leading Deloitte Private Czech Republic; head of the Deloitte Corporate Governance Centre Czech Republic"
+          },
+          {
+            "year": "2012–2016 and 2019–2021",
+            "role": "Deloitte Legal CE — Central Europe Leader (18 countries, 28 cities, more than 450 lawyers), member of the Deloitte Legal global leadership team"
+          },
+          {
+            "year": "2018",
+            "role": "Czech Corporate Governance Code — co-author (published by the Czech Institute of Directors in cooperation with Deloitte; effective from 1 January 2019)"
+          },
+          {
+            "year": "since 2023",
+            "role": "own law practice"
+          },
+          {
+            "year": "since 2023",
+            "role": "Executive Guide — one-to-one guidance, leadership teams, mediation, family governance"
           }
         ]
       },
       "sections": [
         {
-          "heading": "Institutional involvement",
+          "heading": "Institutional roles",
           "accent": "navy",
-          "cards": [
-            { "title": "Chair of the Supervisory Board, Transparency International Czech Republic" },
-            { "title": "Board of the Czech Bar Association" },
-            { "title": "Alliance for the Modern State" },
-            { "title": "Czech Floorball" }
+          "items": [
+            "Transparency International Czech Republic — Chair of the Board since 2010",
+            "Czech Bar Association — Board of Directors; Chair of the Mediation Section; Vice-Chair of the Trust and Endowment Fund Administration Subsection and of the Transparency Committee; 2022–2025 member of the Supervisory Board",
+            "Aliance pro moderní stát (Alliance for a Modern State) — internal auditor",
+            "Czech Floorball (national federation) — Chair of the Appeals and Audit Committee"
           ]
         },
         {
           "heading": "Education",
           "accent": "blue",
-          "cards": [
-            { "title": "Masaryk University" },
-            { "title": "Nottingham Trent University", "detail": "LL.M." },
-            { "title": "Brno University of Technology" }
+          "items": [
+            "Masaryk University, Faculty of Law — Mgr. (master's degree in law)",
+            "Brno University of Technology, Faculty of Business and Management — Bc. (bachelor's degree), tax advisory",
+            "Nottingham Trent University — LL.M., Corporate Law"
           ]
         },
         {
-          "heading": "Certifications",
+          "heading": "Training and certification",
           "accent": "teal",
-          "cards": [
-            { "title": "Certified coach", "detail": "QED Group" },
-            { "title": "Mediator", "detail": "Conflict Management International (CMI)" },
-            { "title": "Crisis intervention", "detail": "Remedium" }
+          "items": [
+            "Individual coaching — QED GROUP (Radvan Bahbouh), 2023",
+            "Team coaching and facilitation — QED GROUP (programme lead: Radvan Bahbouh), 2025",
+            "Mediation — Conflict Management International (CMI), 2024",
+            "Crisis intervention — Remedium, 2024",
+            "Mindfulness — Oxford Mindfulness Foundation, 2025"
           ]
         }
       ],
-      "photoAlt": "Portrait of Jan Spáčil"
+      "languages": "Czech, English",
+      "cta": {
+        "title": "Let's talk",
+        "body": "We start with a no-obligation conversation — no expectations, no pitch.",
+        "label": "Get in touch"
+      }
     },
     "contact": {
       "hero": {
         "eyebrow": "Contact",
         "title": "Let's talk.",
-        "subtitle": "I work with a limited circle of clients to whom I can give the attention their situation deserves. Write a few lines about what you're facing — I'll get back to you."
+        "subtitle": "I work with a limited number of clients, so that I can give each of them the attention their situation deserves. Send me a few lines about what you are dealing with, or simply let me know that you would like to meet. I will get back to you within three working days."
       },
       "email": {
         "label": "Email",
-        "value": "[jan.spacil@cleanmind.com]"
+        "value": "jan@executiveguide.cz"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+420 603 485 125"
       },
       "linkedin": {
         "label": "LinkedIn",
-        "value": "Jan Spáčil"
+        "value": "Jan Spáčil",
+        "href": "https://www.linkedin.com/in/spaciljan/"
       },
-      "note": "We begin with a non-binding conversation — no expectations, no presentation. Just you and me, to find out whether we want to work together.",
+      "where": "Where do we meet? I am happy to welcome you to my office in Malá Strana, Prague; we can also meet at yours or online.",
+      "note": "We start with a no-obligation conversation — no expectations, no pitch. Just you and me, to find out whether we want to work together.",
       "form": {
         "name": "Name",
         "email": "Email",
-        "message": "Briefly describe your situation",
-        "submit": "Send"
+        "phone": "Phone (optional)",
+        "message": "What would you like to talk about? (optional)",
+        "submit": "Send",
+        "privacy": {
+          "text": "I will use the details from this form only to reply to your message and to arrange a meeting. More in the privacy policy.",
+          "links": [
+            {
+              "match": "privacy policy",
+              "to": "privacy"
+            }
+          ]
+        },
+        "success": "Thank you, I have received your message. I will get back to you within three working days. If it is urgent, please call me."
       }
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "paragraphs": [
+        "Controller: CleanMind s.r.o., Company ID (IČO) 21205515, registered office V Boroví 2305, 252 28 Černošice, Czech Republic, entered in the Commercial Register maintained by the Municipal Court in Prague, Section C, Insert 398224, email jan@executiveguide.cz.",
+        "What data we process: your name, email address and, where provided, your phone number and the content of the message you send us through the contact form or by email.",
+        "Why and on what legal basis: so that we can reply to you and, where appropriate, arrange a meeting. The legal bases are steps taken at your request prior to entering into a contract (Article 6(1)(b) GDPR) and our legitimate interest in replying to your message (Article 6(1)(f) GDPR).",
+        "Do you have to provide your data? No, it is voluntary. Without your name and email address, however, we cannot reply to you.",
+        "How long we keep it: if we do not go on to work together, we delete your data within 12 months of our last communication. If we do work together, further processing is governed by our contract and by statutory retention periods.",
+        "Who receives it: we do not sell your data or pass it on to other controllers. It is processed on our behalf only by processors that run our website and email: ⟨website hosting, e.g. Vercel Inc.⟩, ⟨form-handling service⟩ and ⟨email provider⟩. ⟨If any of them is outside the EEA, add: Data is transferred to the USA on the basis of the European Commission's adequacy decision (EU–US Data Privacy Framework) or standard contractual clauses.⟩",
+        "Your rights: you have the right to access your data, to have it rectified or erased, to obtain restriction of its processing, to data portability, and to object to processing based on our legitimate interests. Simply write to jan@executiveguide.cz. You also have the right to lodge a complaint with the Office for Personal Data Protection (Úřad pro ochranu osobních údajů).",
+        "Cookies: the website does not use analytics or marketing cookies; at most, it uses cookies that are strictly necessary for it to work.",
+        "Automated decision-making: no automated decision-making or profiling takes place.",
+        "Legal services: the data of clients of the law practice is processed by Mgr. Bc. Jan Spáčil, LL.M., attorney-at-law, as an independent controller in accordance with his own privacy policy.",
+        "Effective date: this policy applies from ⟨website launch date⟩."
+      ]
     }
   }
 }

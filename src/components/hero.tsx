@@ -1,28 +1,31 @@
 "use client";
 
-import { useRef } from "react";
-import Image from "next/image";
+import { useRef, type ReactNode } from "react";
 import { gsap, SplitText } from "@/src/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import { AccentMark } from "@/src/components/accent-mark";
+import { Eyebrow } from "@/src/components/eyebrow";
+import { SCRUB_LAG } from "@/src/lib/reveal";
 import type { Accent } from "@/src/lib/quadrant-accents";
 
 export function Hero({
   eyebrow,
   title,
   subtitle,
-  tagline,
+  credentials,
   accent = "navy",
+  statement = false,
   showScrollHint = false,
-  photo,
+  children,
 }: {
   eyebrow: string;
   title: string;
   subtitle: string;
-  tagline?: string;
+  credentials?: string;
   accent?: Accent;
+  // The title is a whole sentence: one display size down, on a narrower measure.
+  statement?: boolean;
   showScrollHint?: boolean;
-  photo?: { src: string; alt: string };
+  children?: ReactNode;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -52,16 +55,14 @@ export function Hero({
           stagger: { each: 0.12, ease: "easeReveal" },
         })
           .from(".hero-eyebrow", { opacity: 0, y: 12, duration: 0.8, ease: "easeReveal" }, 0)
-          .from(".hero-subtitle", { opacity: 0, y: 16, duration: 0.9, ease: "easeReveal" }, 0.6)
-          .from(".hero-tagline", { opacity: 0, duration: 0.9, ease: "easeReveal" }, 0.95);
+          .from(".hero-subtitle", { opacity: 0, y: 16, duration: 0.9, ease: "easeReveal" }, 0.6);
 
-        if (photo) {
-          tl.from(".hero-photo", {
-            opacity: 0,
-            y: 24,
-            duration: 1.1,
-            ease: "easeReveal",
-          }, 0.45);
+        if (credentials) {
+          tl.from(".hero-credentials", { opacity: 0, duration: 0.9, ease: "easeReveal" }, 0.95);
+        }
+
+        if (children) {
+          tl.from(".hero-extra", { opacity: 0, y: 16, duration: 0.9, ease: "easeReveal" }, 0.8);
         }
 
         if (showScrollHint) {
@@ -91,7 +92,7 @@ export function Hero({
             trigger: containerRef.current,
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: SCRUB_LAG,
           },
         });
 
@@ -121,50 +122,23 @@ export function Hero({
 
   return (
     <>
-      <div ref={containerRef} className="mx-auto max-w-6xl px-6 py-32 sm:py-40">
-        <div
-          className={
-            photo
-              ? "grid items-start gap-10 lg:grid-cols-[1fr_360px] lg:items-stretch lg:gap-16"
-              : undefined
-          }
+      <div ref={containerRef} className="container-page py-hero">
+        <Eyebrow accent={accent} className="hero-eyebrow">
+          {eyebrow}
+        </Eyebrow>
+        <h1
+          ref={titleRef}
+          className={`mt-6 ${statement ? "type-statement max-w-4xl" : "type-display"}`}
         >
-          <div>
-            <p className="hero-eyebrow flex items-center gap-2.5 text-sm uppercase tracking-[0.25em] text-foreground/50">
-              <AccentMark accent={accent} />
-              {eyebrow}
-            </p>
-            <h1
-              ref={titleRef}
-              className="mt-6 font-serif text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl"
-            >
-              {title}
-            </h1>
-            <p className="hero-subtitle mt-8 max-w-xl text-lg text-foreground/70">
-              {subtitle}
-            </p>
-            {tagline && (
-              <p className="hero-tagline mt-16 text-sm uppercase tracking-[0.2em] text-foreground/40">
-                {tagline}
-              </p>
-            )}
-          </div>
-
-          {photo && (
-            <div className="hero-photo relative mt-10 lg:mt-0">
-              <div className="glass relative h-80 overflow-hidden rounded-2xl border border-white/55 sm:h-[26rem] lg:absolute lg:inset-0 lg:h-auto">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(min-width: 1024px) 360px, calc(100vw - 3rem)"
-                  priority
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          )}
-        </div>
+          {title}
+        </h1>
+        <p className="hero-subtitle mt-8 max-w-2xl text-lg text-foreground/70">{subtitle}</p>
+        {credentials && (
+          <p className="hero-credentials mt-8 max-w-2xl text-sm text-foreground/50">
+            {credentials}
+          </p>
+        )}
+        {children && <div className="hero-extra mt-10">{children}</div>}
       </div>
 
       {showScrollHint && (

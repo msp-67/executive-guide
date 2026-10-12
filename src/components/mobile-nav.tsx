@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/src/dictionaries/locales";
 import type { Dictionary } from "@/src/dictionaries/get-dictionary";
 import { navItems } from "@/src/lib/nav-items";
+import { routePath } from "@/src/lib/routes";
 import { LanguageSwitcher } from "@/src/components/language-switcher";
 import { getLenis } from "@/src/components/smooth-scroll";
 
@@ -19,8 +20,6 @@ export function MobileNav({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
-
-  const isActive = (slug: string) => pathname === `/${lang}/${slug}`;
 
   useEffect(() => {
     if (open) {
@@ -47,7 +46,7 @@ export function MobileNav({
   }, [open]);
 
   return (
-    <div className="md:hidden">
+    <div className="nav:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -59,19 +58,19 @@ export function MobileNav({
         <span className="relative block h-3.5 w-4">
           <span
             aria-hidden
-            className={`absolute left-0 h-px w-4 bg-foreground transition-all duration-300 ease-hover motion-reduce:transition-none ${
+            className={`absolute left-0 h-px w-4 bg-foreground transition-all motion-reduce:transition-none ${
               open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
             }`}
           />
           <span
             aria-hidden
-            className={`absolute left-0 top-1/2 h-px w-4 -translate-y-1/2 bg-foreground transition-opacity duration-300 ease-hover motion-reduce:transition-none ${
+            className={`absolute left-0 top-1/2 h-px w-4 -translate-y-1/2 bg-foreground transition-opacity motion-reduce:transition-none ${
               open ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
             aria-hidden
-            className={`absolute left-0 h-px w-4 bg-foreground transition-all duration-300 ease-hover motion-reduce:transition-none ${
+            className={`absolute left-0 h-px w-4 bg-foreground transition-all motion-reduce:transition-none ${
               open ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-full"
             }`}
           />
@@ -82,25 +81,25 @@ export function MobileNav({
         onClick={(e) => {
           if (e.target === e.currentTarget) setOpen(false);
         }}
-        className={`fixed inset-0 z-0 flex flex-col items-center justify-center gap-10 bg-background/98 backdrop-blur-xl transition-opacity duration-300 ease-hover motion-reduce:duration-0 ${
+        className={`fixed inset-0 z-0 flex flex-col items-center justify-center gap-10 bg-background/98 backdrop-blur-xl transition-opacity motion-reduce:duration-0 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         <nav className="flex flex-col items-center gap-6">
-          {navItems.map((item, index) => (
+          {navItems.map((key, index) => (
             <Link
-              key={item.slug}
+              key={key}
               ref={index === 0 ? firstLinkRef : undefined}
-              href={`/${lang}/${item.slug}`}
+              href={routePath(lang, key)}
               data-cursor="link"
               onClick={() => setOpen(false)}
               className={`font-serif text-3xl tracking-tight transition-colors ${
-                isActive(item.slug)
+                pathname === routePath(lang, key)
                   ? "text-accent-teal"
                   : "text-foreground/70 hover:text-foreground"
               }`}
             >
-              {nav[item.key]}
+              {nav[key]}
             </Link>
           ))}
         </nav>

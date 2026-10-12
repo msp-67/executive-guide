@@ -17,6 +17,19 @@
   --color-accent-blue-rgb: 63, 101, 141;
   --color-accent-teal-rgb: 61, 119, 123;
   --color-accent-green-rgb: 62, 111, 88;
+
+  /* Vertical rhythm — the one gap between sections (also the gap before the
+     footer) and the one hero padding, sitewide. Exposed below as the
+     `section` / `section-half` / `hero` spacing utilities. */
+  --space-section: 7rem;
+  --space-hero: 6rem;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --space-section: 10rem;
+    --space-hero: 10rem;
+  }
 }
 
 @theme inline {
@@ -35,6 +48,69 @@
   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
   --ease-hover: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* Every `transition-*` utility defaults to the shared hover curve (same
+     values as --ease-hover above) and one duration, so no call site needs
+     its own duration/ease classes. */
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --spacing-section: var(--space-section);
+  --spacing-section-half: calc(var(--space-section) / 2);
+  --spacing-hero: var(--space-hero);
+
+  /* From this width the header shows the full menu instead of the burger —
+     the narrowest viewport where the name and all seven items fit one row. */
+  --breakpoint-nav: 72rem;
+
+  /* Two radii: small item cards vs. larger panels and photos. */
+  --radius-card: 0.75rem;
+  --radius-panel: 1rem;
+
+  /* Uppercase tracking: static labels vs. interactive text (buttons, links). */
+  --tracking-label: 0.2em;
+  --tracking-action: 0.15em;
+}
+
+/* Page container — the shared left edge and width for hero, content and footer.
+   draw-line.tsx measures it to keep the guide line clear of the content. */
+@utility container-page {
+  @apply mx-auto max-w-6xl px-6;
+}
+
+/* Type scale. One recipe per role; components use these instead of repeating
+   size/weight/tracking combinations. */
+@utility type-display {
+  @apply font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl;
+}
+
+/* Hero titles that are whole sentences rather than a short line. */
+@utility type-statement {
+  @apply font-serif text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl;
+}
+
+@utility type-heading {
+  @apply font-serif text-3xl font-semibold tracking-tight sm:text-5xl;
+}
+
+@utility type-title {
+  @apply font-serif text-2xl font-semibold tracking-tight sm:text-3xl;
+}
+
+@utility type-label {
+  @apply text-sm uppercase tracking-label text-foreground/50;
+}
+
+@utility type-label-sm {
+  @apply text-xs uppercase tracking-label text-foreground/50;
+}
+
+@utility type-action {
+  @apply text-sm uppercase tracking-action;
+}
+
+@utility type-action-sm {
+  @apply text-xs uppercase tracking-action;
 }
 
 body {
@@ -116,8 +192,8 @@ body {
 }
 
 /* Liquid-glass primary CTA — same restrained refraction language as the header,
-   sized down for a button. Border color/transitions stay on the Tailwind classes
-   at each call site; this only owns background/shadow/blur and their transition. */
+   sized down for a button. Layout, border and type live on the one consumer
+   (src/components/cta-button.tsx); this owns background/shadow/blur and their transition. */
 .glass-button {
   background:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 65%),
@@ -127,10 +203,9 @@ body {
     0 6px 20px rgba(20, 20, 15, 0.07);
   backdrop-filter: blur(8px) saturate(1.15);
   -webkit-backdrop-filter: blur(8px) saturate(1.15);
-  transition:
-    background 0.4s var(--ease-hover),
-    box-shadow 0.4s var(--ease-hover),
-    border-color 0.4s var(--ease-hover);
+  transition-property: background, box-shadow, border-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
 }
 
 .glass-button:hover {

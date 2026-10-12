@@ -83,6 +83,15 @@ function buildOrganicPath(
   return points.join(" ");
 }
 
+// Full-size line on wide screens; it scales down from these as the gutter narrows.
+const MAX_BASE_X = 38;
+const MAX_AMPLITUDE = 24;
+const MAX_LOOP_RADIUS = 26;
+// Gap kept between the line's furthest reach and the content edge.
+const GUTTER_CLEARANCE = 8;
+// Furthest wobbleAt() strays from baseX, as a multiple of amplitude (1 + 0.5 + 0.24).
+const WOBBLE_REACH = 1.74;
+
 export function DrawLine() {
   const pathRef = useRef<SVGPathElement>(null);
   const [layout, setLayout] = useState<{ d: string; width: number; height: number } | null>(
@@ -100,16 +109,20 @@ export function DrawLine() {
       lastHeight = height;
       lastWidth = width;
 
-      // Amplitude (and the loop's center/radius) are tuned so the worst-case
-      // reach stays clear of where text content starts on the widest
-      // (desktop) and narrowest (mobile) containers on this site.
-      const isMobile = width < 768;
-      const baseX = isMobile ? 9 : 38;
-      const amplitude = isMobile ? 6 : 24;
-      const loopCenterX = isMobile ? 9 : 38;
-      const loopRadius = isMobile ? 7 : 26;
+      // The line lives in the gutter left of the page content. Measure where
+      // content actually starts and size the wander and loops to fit inside
+      // that gutter, so the line never crosses text at any viewport width.
+      const container = document.querySelector(".container-page");
+      const contentLeft = container
+        ? container.getBoundingClientRect().left +
+          parseFloat(getComputedStyle(container).paddingLeft)
+        : 24;
+      const gutter = contentLeft - GUTTER_CLEARANCE;
+      const baseX = Math.min(MAX_BASE_X, gutter / 2);
+      const amplitude = Math.min(MAX_AMPLITUDE, (gutter - baseX) / WOBBLE_REACH);
+      const loopRadius = Math.min(MAX_LOOP_RADIUS, baseX - 3);
       setLayout({
-        d: buildOrganicPath(height, baseX, amplitude, loopCenterX, loopRadius),
+        d: buildOrganicPath(height, baseX, amplitude, baseX, loopRadius),
         width,
         height,
       });
