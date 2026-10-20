@@ -13,7 +13,7 @@
  */
 export const PORTRAITS = {
   about: { src: "/jan-about.png" as string | null, aspectRatio: "4 / 5" },
-  intro: { src: "/jan-hero.png" as string | null, aspectRatio: "3 / 4" },
+  intro: { src: "/portraits/jan-portrait.jpg" as string | null, aspectRatio: "3 / 4" },
   home: { src: "/jan-about.png" as string | null, aspectRatio: "4 / 5" },
   contact: { src: null as string | null, aspectRatio: "1 / 1" },
 } satisfies Record<string, { src: string | null; aspectRatio: string }>;
